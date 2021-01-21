@@ -85,6 +85,14 @@ Therefore, in order to download or debug, you need at least one USB to serial po
   - [x] Power Management
   - [x] MQTT
   - [x] SPI
+  - [ ] ADC
+  - [ ] I2C
+  - [ ] GPS
+  - [ ] OTA
+  - [ ] Call
+  - [ ] SMS
+  - [ ] SMS
+
 
 ### Get the SDK
 
@@ -96,9 +104,13 @@ Therefore, in order to download or debug, you need at least one USB to serial po
 git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git
 ```
 
-### Develop applications using the SDK
+### Project structure and developing applications
 
-Examples refer to the [demo](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo) folder
+Each folder contains C library and their corresponding header files. To use the library files follow the steps below:
+
+- Copy the lib folder of the project to be run into the [demo](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo) folder of your installed SDK.
+- Navigate into the folder and read the README.md file of the specific example to configure the example code if needed. For example, to test the MQTT library example, the endpoint, certificates and keys have to be provided to establish a successful connection.
+- Build and flash the code as mentioned [here](https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en/c-sdk/burn-debug.html).
 
 **Doumentation** here:  [GPRS C SDK DOC](https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en)
 
