@@ -5,11 +5,11 @@ Wrapper over most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9
 
 ## Hardware
 
-### 1. A9: GPRS Module
+### 1. [A9: GPRS Module](http://www.ai-thinker.com/pro_view-9.html)
 
 ![](./doc/assets/A9.png) </br>
 
-**Source the A9 module [here](http://www.ai-thinker.com/pro_view-9.html)**
+**Datasheet of the A9 module [here](./doc/Datasheets/Ai-Thinker-A9-GPRS-Series-Module-Datasheet)**
 
 **Features**:
   * RDA 32 bit RISC core, frequency up to 312MHz, with 4k instruction cache, 4k data cache
@@ -31,22 +31,22 @@ Wrapper over most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9
   * calls
   * SMS service
 
-### 2. A9G: GPRS + GPS + BDS Module
+### 2. [A9G: GPRS + GPS + BDS Module](http://www.ai-thinker.com/pro_view-28.html)
 
 ![](./doc/assets/A9G.png) </br>
 
-**Source the A9G module [here](http://www.ai-thinker.com/pro_view-28.html)**
+**Datasheet of the A9G module [here](./doc/Datasheets/Ai-Thinker-A9G-GPRS-Series-Module-Datasheet.pdf)**
 
 **Features**:
   * All the features of A9 above
   * Integrated GPS+BDS (connected to UART2 internal of module)
 
-### 3. A9/A9G GPRS (+GPS+BDS) Development Board( pudding)
+### 3. [A9](http://www.ai-thinker.com/pro_view-78.html)/[A9G](http://www.ai-thinker.com/pro_view-77.html) GPRS (+GPS+BDS) Development Board( pudding)
 
 ![](./doc/assets/A9G_dev.png) </br>
 A9/A9G development board for easy development and debugging
 
-**Source the pudding development boards here: [A9](http://www.ai-thinker.com/pro_view-78.html) | [A9G](http://www.ai-thinker.com/pro_view-77.html)**
+**Schematics of the pudding development boards here: [A9](./doc/Schematics/a9-dev-schematic_v1.2.pdf) | [A9G](./doc/Schematics/a9g-dev-schematic_v1.2.pdf)**
 
 **Features**:
   * 1 A9G module (the board be the same that with A9 and A9G, for the A9 and A9G in the same package, the same pin )
