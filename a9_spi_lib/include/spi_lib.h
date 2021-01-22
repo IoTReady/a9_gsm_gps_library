@@ -140,7 +140,7 @@ uint8_t SPI_WriteReadByte(SPI_ID_t SPIx, uint8_t data);
 /**
   * @brief Read and Write data to SPI
   * 
-  * @param spiN:    SPI number
+  * @param SPIx:    SPI number
   * @param s_data:  Data to be sent
   * @param r_data:  Data receive buffer
   * @param length:  The length of data to be read/sent
@@ -152,7 +152,7 @@ uint32_t SPI_WriteReadData(SPI_ID_t SPIx, uint8_t *s_data, uint8_t *r_data, uint
 /**
   * @brief Read and Write data to SPI in DMA mode
   * 
-  * @param spiN:    SPI number
+  * @param SPIx:    SPI number
   * @param s_addr:  Starting address of data to be sent
   * @param r_addr:  Starting address of data receive buffer
   * @param length:  The length of data to be read/sent

@@ -18,7 +18,7 @@ Wrapper over most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9
   * 1 USB1.1 device interface
   * 2 UART interface with flow control (+1 download/debug serial port)
   * 2 SPI interface
-  * 3 I <sup>2</sup> C interface
+  * 3 I<sup>2</sup>C interface
   * 1 SDMMC controller (interface)
   * 2 ADC interface, 10 bits
   * 32Mb (4MB) SPI NOR Flash
@@ -28,7 +28,7 @@ Wrapper over most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9
   * Power Management Unit: Lithium battery charge management, integrated DC-DC and LDOs, variable IO voltage
   * 18.8 x 19.2 mm SMD package
   * Quad-band GSM/GPRS (800/900/1800 / 1900MHz)
-  * calls
+  * Calls
   * SMS service
 
 ### 2. [A9G: GPRS + GPS + BDS Module](http://www.ai-thinker.com/pro_view-28.html)
@@ -105,17 +105,12 @@ The download interface to the device is the HST interface. Depending upon how th
 | GND          | GND           |
 
 ### Power Supply
-The power can be connected to the lithium battery voltage (ie 3.8v ~ 4.2v) (VBAT pin), can also be connected to 5v power supply (5v input pin or USB input), it should be noted that, if using lithium battery power supply You need to press POWER KEY for about 3 seconds to power on the module. Please note that this is not required when powered through USB.
+The power can be supplied by a lithium battery or an fixed external supply(ie 3.8v ~ 4.2v) to the `VBAT` pin. Alternatively, it can also be connected to 5v power supply (5v input pin or USB input). However, it should be noted that if using lithium battery as power supply POWER KEY needs to be pressed for about 3 seconds to power on the module. This is not required when powered through USB.
 
 
 # Setting up the build environment
 
 ## Windows
-
-### Download and install the toolchain:
-* Download the toolchain [here](). 
-* Decompress the downloaded file into a folder.
-* Run `config_env_admin.bat` file in CSDTK to set environment variables required.
 
 ### Download the SDK:
 * Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly.(need to install `git`)
@@ -124,6 +119,11 @@ The power can be connected to the lithium battery voltage (ie 3.8v ~ 4.2v) (VBAT
     ```
   > This repo has been tested on [this version](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a)
 * Decompress the CSDK downloaded to GPRS_C_SDK folder into a directory, such as ~/projects/GPRS_C_SDK.
+
+### Download and install the toolchain:
+* Download the toolchain [here](). 
+* Decompress the downloaded file into a folder.
+* Run `config_env_admin.bat` file in CSDTK to set environment variables required.
 
 ### Compile a demo app:
 * Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then `Open PowerShell window here`.
@@ -146,6 +146,18 @@ The power can be connected to the lithium battery voltage (ie 3.8v ~ 4.2v) (VBAT
 
 ## Linux
 
+### Download the SDK:
+* Create a project folder `projects`
+````
+mkdir ~/projects
+````
+* Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly(need to install `git`)
+    ```
+    git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git --recursive
+    ```
+  > This repo has been tested on [this version](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a)
+* Decompress the CSDK downloaded to GPRS_C_SDK folder into the directory, such as ~/projects/GPRS_C_SDK.
+
 ### Download and install the toolchain:
 * Install dependencies for compile tool
 ````
@@ -153,20 +165,12 @@ sudo apt install build-essential gcc-multilib g++-multilib libzip-dev zlib1g lib
 ````
 * Since the official download links in the official Ai-Thinker website is dead, download the toolchain [here](https://github.com/pulkin/csdtk42-linux)
 * Decompress the downloaded file to a folder, ~/software/CSDTK for example, and then execute setup.sh, the first parameter is the location of CSDTK, the second parameter is the location of your projects.
-    ````
-    cd ~/software
-    tar -xzvf CSDTK42_Linux.tar.gz
-    cd CSDTK
-    ./setup.sh ./ ~/projects
-    ````
-
-### Download the SDK:
-* Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly(need to install `git`)
-    ```
-    git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git --recursive
-    ```
-  > This repo has been tested on [this version](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a)
-* Decompress the CSDK downloaded to GPRS_C_SDK folder into a directory, such as ~/projects/GPRS_C_SDK.
+  ````
+  cd ~/software
+  tar -xzvf CSDTK42_Linux.tar.gz
+  cd CSDTK
+  ./setup.sh ./ ~/projects
+  ````
 
 ### Compile a demo app:
 * Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then `Open PowerShell window here`.
