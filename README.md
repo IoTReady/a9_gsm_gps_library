@@ -78,8 +78,7 @@ Therefore, in order to download or debug, you need at least one USB to serial po
 
 ## SDK
 
-### SDK Features
-
+### Features
 * Provide easier-to-use and ready-to-deploy out of the box API. Integrates a wide range of features including:
   - [x] GPIO
   - [x] Power Management
@@ -94,15 +93,74 @@ Therefore, in order to download or debug, you need at least one USB to serial po
   - [ ] SMS
 
 
-### Get the SDK
+## Hardware connection
 
-* Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases).
+### Module Debugging and Firmware Download
+The download interface to the device is the HST interface. Depending upon how the power is being supplied to the board(pudding), the following connections are required in the minimum to provision firmware download into the device or to debug the logs.
+
+| USB to TTL module | Dev Board(pudding) |
+| -----------  | -----------   |
+| TX           | HST_RX        |
+| RX           | HST_TX        |
+| GND          | GND           |
+
+### Power Supply
+The power can be connected to the lithium battery voltage (ie 3.8v ~ 4.2v) (VBAT pin), can also be connected to 5v power supply (5v input pin or USB input), it should be noted that, if using lithium battery power supply You need to press POWER KEY for about 3 seconds to power on the module. Please note that this is not required when powered through USB.
+
+
+# Setting up the build environment
+
+## Windows
+
+### Download and install the toolchain:
+* Download the toolchain [here](). 
+* Decompress the downloaded file into a folder.
+* Run `config_env_admin.bat` file in CSDTK to set environment variables required.
+
+### Download the SDK:
+* Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly(need to install `git`)
+    ```
+    git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git --recursive
+    ```
   > This repo has been tested on [this version](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a)
+* Decompress the CSDK downloaded to GPRS_C_SDK folder into a directory, such as ~/projects/GPRS_C_SDK.
 
-* Or clone directly(need to install `git`)
-```
-git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git
-```
+### Compile a demo app:
+* Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then `Open PowerShell window here`.
+* Then you can use `./build.bat` script to build project.
+
+    * ````./build.bat demo $PROJ````: compile demo project $PROJ
+        e.g.: ````./build.bat demo gpio````
+    * ````./build.bat clean $PROJ````: clear the build files of $PROJ
+        e.g.: ````./build.bat clean gpio````
+    * ````./build.bat clean all````: clear all build files
+    * ````./build.bat demo $PROJ release````: build a release version, e.g.:./build.bat demo gpio release，if the last parameter is not release, it will be default to debug version. The GDB can be used to debug errors after system crashed in debug version, but release version can not, watch dog activate in release version,it will auto restart system when system crashed!
+        e.g.: ````./build.bat demo gpio release````
+* A `build` folder and a `hex` folder will be generated after compilation containing the build files.
+* In the `hex` folder, two \*.lod files will be generated. These \*.lod files are the target file that are to be flashed into the dev board.
+* The two \*.lod files will be significantly different in their sizes. The larger file should be flashed when:
+    * Flashing for the first time
+    * If SDK level changes have been made    
+  Else, the smaller file can be flashed in order to reduce the download time significantly.
+
+### Flash and Debug:
+
+
+
+
+## Linux
+
+### Download and install the toolchain:
+* Install dependencies for compile tool
+````sudo apt install build-essential gcc-multilib g++-multilib libzip-dev zlib1g lib32z1 libpng12-0 libusb-0.1-4````
+* Since the official download links in the official Ai-Thinker website is dead, download the toolchain [here](https://github.com/pulkin/csdtk42-linux)
+* Decompress the downloaded file to a folder, ~/software/CSDTK for example, and then execute setup.sh, the first parameter is the location of CSDTK, the second parameter is the location of your projects.
+    ````
+    cd ~/software
+    tar -xzvf CSDTK42_Linux.tar.gz
+    cd CSDTK
+    ./setup.sh ./ ~/projects
+    ````
 
 ### Project structure and developing applications
 
