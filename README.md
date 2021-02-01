@@ -9,7 +9,7 @@ Wrapper over most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9
 
 ![](./doc/assets/A9.png) </br>
 
-**Datasheet of the A9 module [here](./doc/Datasheets/Ai-Thinker-A9-GPRS-Series-Module-Datasheet)**
+**Datasheet of the A9 module [here](./doc/Datasheets/Ai-Thinker-A9-GPRS-Series-Module-Datasheet.pdf)**
 
 **Features**:
   * RDA 32 bit RISC core, frequency up to 312MHz, with 4k instruction cache, 4k data cache
@@ -90,7 +90,6 @@ Therefore, in order to download or debug, you need at least one USB to serial po
   - [ ] OTA
   - [ ] Call
   - [ ] SMS
-  - [ ] SMS
 
 
 ## Hardware connection
@@ -121,7 +120,7 @@ The power can be supplied by a lithium battery or an fixed external supply(ie 3.
 * Decompress the CSDK downloaded to GPRS_C_SDK folder into a directory, such as ~/projects/GPRS_C_SDK.
 
 ### Download and install the toolchain:
-* Download the toolchain [here](). 
+* Download the toolchain [here](https://github.com/zkemble/GPRS_C_SDK/releases/download/v2.129/CSDTK42_Update2_18_7_27.7z). 
 * Decompress the downloaded file into a folder.
 * Run `config_env_admin.bat` file in CSDTK to set environment variables required.
 
