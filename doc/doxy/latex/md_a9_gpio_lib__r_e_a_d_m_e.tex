@@ -1,0 +1,15 @@
+\begin{quote}
+This README assumes that you have already setup the GPRS\+\_\+\+C\+\_\+\+SDK and CSTDK. If not, please follow the instructions \mbox{\hyperlink{index_md_README}{here}} before continuing. \end{quote}
+\hypertarget{md_a9_gpio_lib__r_e_a_d_m_e_autotoc_md1}{}\doxysection{GPIO Example}\label{md_a9_gpio_lib__r_e_a_d_m_e_autotoc_md1}
+This test code shows how to configure gpio and how to use gpio interrupt with the wrapper functions provided under this library.\hypertarget{md_a9_gpio_lib__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{Functions of this test example\+:}\label{md_a9_gpio_lib__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item GPIO\+\_\+\+PIN27\+: Output, connected to Blue LED on the dev board. Blinks with 1 second intervals.
+\item GPIO\+\_\+\+PIN4\+: Input, pulled up, interrupt from falling edge
+\item GPIO\+\_\+\+PIN2\+: Input, state of this pin is read when the interrupt triggers on GPIO\+\_\+\+PIN4
+\end{DoxyItemize}\hypertarget{md_a9_gpio_lib__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Running the GPIO example\+:}\label{md_a9_gpio_lib__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Copy the \href{./a9_gpio_lib}{\texttt{ library folder}} of this project into the \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo}{\texttt{ demo}} folder of your installed SDK.
+\item Build and flash the code as mentioned \mbox{\hyperlink{index_md_README}{here}}. 
+\end{DoxyItemize}

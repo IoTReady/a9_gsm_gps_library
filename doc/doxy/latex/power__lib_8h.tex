@@ -1,0 +1,80 @@
+\hypertarget{power__lib_8h}{}\doxysection{a9\+\_\+power\+\_\+lib/include/power\+\_\+lib.h File Reference}
+\label{power__lib_8h}\index{a9\_power\_lib/include/power\_lib.h@{a9\_power\_lib/include/power\_lib.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{power__lib_8h_a7357c5975db6638eace5c61c3545856a}{power\+\_\+sleep}} ()
+\begin{DoxyCompactList}\small\item\em Put to sleep mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{power__lib_8h_abff9a580075d127e5ec7b02653097a90}{power\+\_\+wakeup}} ()
+\begin{DoxyCompactList}\small\item\em Wake up from sleep mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{power__lib_8h_a0ce31c078964d743879c94350c999836}{power\+\_\+restart}} ()
+\begin{DoxyCompactList}\small\item\em Reboot the device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{power__lib_8h_a7e4c326b035536e54a7ebcd61c95c1d9}{power\+\_\+shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Shut down the device. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{power__lib_8h_ac388926fbe3c31cd0e0c06e8facc95ed}{power\+\_\+get\+\_\+battery}} (uint8\+\_\+t $\ast$percent)
+\begin{DoxyCompactList}\small\item\em Get the battery status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{power__lib_8h_ac388926fbe3c31cd0e0c06e8facc95ed}\label{power__lib_8h_ac388926fbe3c31cd0e0c06e8facc95ed}} 
+\index{power\_lib.h@{power\_lib.h}!power\_get\_battery@{power\_get\_battery}}
+\index{power\_get\_battery@{power\_get\_battery}!power\_lib.h@{power\_lib.h}}
+\doxysubsubsection{\texorpdfstring{power\_get\_battery()}{power\_get\_battery()}}
+{\footnotesize\ttfamily uint16\+\_\+t power\+\_\+get\+\_\+battery (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{percent }\end{DoxyParamCaption})}
+
+
+
+Get the battery status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em percent} & Address of a variable to store the battery percent\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Voltage of battery in mV 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{power__lib_8h_a0ce31c078964d743879c94350c999836}\label{power__lib_8h_a0ce31c078964d743879c94350c999836}} 
+\index{power\_lib.h@{power\_lib.h}!power\_restart@{power\_restart}}
+\index{power\_restart@{power\_restart}!power\_lib.h@{power\_lib.h}}
+\doxysubsubsection{\texorpdfstring{power\_restart()}{power\_restart()}}
+{\footnotesize\ttfamily void power\+\_\+restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reboot the device. 
+
+\mbox{\Hypertarget{power__lib_8h_a7e4c326b035536e54a7ebcd61c95c1d9}\label{power__lib_8h_a7e4c326b035536e54a7ebcd61c95c1d9}} 
+\index{power\_lib.h@{power\_lib.h}!power\_shutdown@{power\_shutdown}}
+\index{power\_shutdown@{power\_shutdown}!power\_lib.h@{power\_lib.h}}
+\doxysubsubsection{\texorpdfstring{power\_shutdown()}{power\_shutdown()}}
+{\footnotesize\ttfamily void power\+\_\+shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Shut down the device. 
+
+\mbox{\Hypertarget{power__lib_8h_a7357c5975db6638eace5c61c3545856a}\label{power__lib_8h_a7357c5975db6638eace5c61c3545856a}} 
+\index{power\_lib.h@{power\_lib.h}!power\_sleep@{power\_sleep}}
+\index{power\_sleep@{power\_sleep}!power\_lib.h@{power\_lib.h}}
+\doxysubsubsection{\texorpdfstring{power\_sleep()}{power\_sleep()}}
+{\footnotesize\ttfamily void power\+\_\+sleep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Put to sleep mode. 
+
+\mbox{\Hypertarget{power__lib_8h_abff9a580075d127e5ec7b02653097a90}\label{power__lib_8h_abff9a580075d127e5ec7b02653097a90}} 
+\index{power\_lib.h@{power\_lib.h}!power\_wakeup@{power\_wakeup}}
+\index{power\_wakeup@{power\_wakeup}!power\_lib.h@{power\_lib.h}}
+\doxysubsubsection{\texorpdfstring{power\_wakeup()}{power\_wakeup()}}
+{\footnotesize\ttfamily void power\+\_\+wakeup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wake up from sleep mode. 
+

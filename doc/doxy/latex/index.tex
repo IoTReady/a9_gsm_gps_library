@@ -1,0 +1,223 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ Wrapper over most used functionalities for the Ai-\/\+Thinker GPRS SoC modules A9/\+A9G for simpler setup and faster deployability.\hypertarget{index_autotoc_md15}{}\doxysection{Hardware}\label{index_autotoc_md15}
+\hypertarget{index_autotoc_md16}{}\doxysubsection{1. $<$a href=\char`\"{}http\+://www.\+ai-\/thinker.\+com/pro\+\_\+view-\/9.\+html\char`\"{}$>$\+A9\+: GPRS Module$<$/a$>$}\label{index_autotoc_md16}
+ 
+
+{\bfseries{Datasheet of the A9 module \href{./doc/Datasheets/Ai-Thinker-A9-GPRS-Series-Module-Datasheet.pdf}{\texttt{ here}}}}
+
+{\bfseries{Features}}\+:
+\begin{DoxyItemize}
+\item RDA 32 bit RISC core, frequency up to 312MHz, with 4k instruction cache, 4k data cache
+\item Up to 29 GPIOs (with two download pins)
+\item Calendar (Real Time Clock) with alarm
+\item 1 USB1.\+1 device interface
+\item 2 UART interface with flow control (+1 download/debug serial port)
+\item 2 SPI interface
+\item 3 I\textsuperscript{2}C interface
+\item 1 SDMMC controller (interface)
+\item 2 ADC interface, 10 bits
+\item 32Mb (4MB) SPI NOR Flash
+\item 32Mb (4MB) DDR PSRAM
+\item 8k\+Hz, 13Bits/sample ADC mic
+\item 48k\+Hz, 16bits/sample DAC Audio
+\item Power Management Unit\+: Lithium battery charge management, integrated DC-\/\+DC and LDOs, variable IO voltage
+\item 18.\+8 x 19.\+2 mm SMD package
+\item Quad-\/band GSM/\+GPRS (800/900/1800 / 1900MHz)
+\item Calls
+\item SMS service
+\end{DoxyItemize}\hypertarget{index_autotoc_md17}{}\doxysubsection{2. $<$a href=\char`\"{}http\+://www.\+ai-\/thinker.\+com/pro\+\_\+view-\/28.\+html\char`\"{}$>$\+A9\+G\+: GPRS + GPS + BDS Module$<$/a$>$}\label{index_autotoc_md17}
+ 
+
+{\bfseries{Datasheet of the A9G module \href{./doc/Datasheets/Ai-Thinker-A9G-GPRS-Series-Module-Datasheet.pdf}{\texttt{ here}}}}
+
+{\bfseries{Features}}\+:
+\begin{DoxyItemize}
+\item All the features of A9 above
+\item Integrated GPS+\+BDS (connected to UART2 internal of module)
+\end{DoxyItemize}\hypertarget{index_autotoc_md18}{}\doxysubsection{3. $<$a href=\char`\"{}http\+://www.\+ai-\/thinker.\+com/pro\+\_\+view-\/78.\+html\char`\"{}$>$\+A9$<$/a$>$/$<$a href=\char`\"{}http\+://www.\+ai-\/thinker.\+com/pro\+\_\+view-\/77.\+html\char`\"{}$>$\+A9\+G$<$/a$>$ GPRS (+\+GPS+\+BDS) Development Board( pudding)}\label{index_autotoc_md18}
+  A9/\+A9G development board for easy development and debugging
+
+{\bfseries{Schematics of the pudding development boards here\+: \href{./doc/Schematics/a9-dev-schematic_v1.2.pdf}{\texttt{ A9}} $\vert$ \href{./doc/Schematics/a9g-dev-schematic_v1.2.pdf}{\texttt{ A9G}}}}
+
+{\bfseries{Features}}\+:
+\begin{DoxyItemize}
+\item 1 A9G module (the board be the same that with A9 and A9G, for the A9 and A9G in the same package, the same pin )
+\item 29 GPIOs with 2.\+45mm spacing (with 2 download debug pins ({\ttfamily HST\+\_\+\+TX},{\ttfamily HST\+\_\+\+RX})
+\item One SIM card slot (Nano Card $<$Micro Card $<$Standard Card)
+\item 1 TF card slot
+\item 1 GPRS interface with IPEX 1 generation package
+\item 1 GPS interface with IPEX 1 generation package
+\item 1 micro USB interface
+\item 5v-\/4.\+2V DC-\/\+DC, it can be 5v power supply or 3.\+8 $\sim$ 4.\+2V power supply
+\item $\sim$$\sim$1 accelerometer chip(\+LIS3\+DHx)$\sim$$\sim$(not soldered by default)
+\item 1 power key, and a reset button
+\item 2 LED
+\item 1 microphone   
+\end{DoxyItemize}
+
+\begin{quote}
+Or you can use other RDA8955 chip related module or board \end{quote}
+\hypertarget{index_autotoc_md19}{}\doxysubsection{4. USB to Serial Module}\label{index_autotoc_md19}
+  It should be noted that the USB interface on the development board is not a USB serial port function, but USB1.\+1 function, Therefore, in order to download or debug, you need at least one USB to serial port module to connect board\textquotesingle{}s {\ttfamily HST\+\_\+\+TX} and{\ttfamily HST\+\_\+\+RX} pin\hypertarget{index_autotoc_md20}{}\doxysubsection{5. Power Supply}\label{index_autotoc_md20}
+
+\begin{DoxyItemize}
+\item board can be light up with 5V(with DC-\/\+DC on dev-\/board) or 4.\+2V({\ttfamily VBAT}) power, and ensure supply enough current(\+Peak current 2\+A)
+\item if use lithium battery connected to {\ttfamily VBAT}, you must press {\ttfamily power-\/key} for a while to power up the module, or just pull down the {\ttfamily power-\/key} pin.
+\item if {\ttfamily VUSB} connected with 5V({\ttfamily VBAT} must supply with power ), the module will automaticly power up no matter {\ttfamily power-\/key} poll down or not.
+\end{DoxyItemize}\hypertarget{index_autotoc_md21}{}\doxysection{SDK}\label{index_autotoc_md21}
+\hypertarget{index_autotoc_md22}{}\doxysubsection{Features}\label{index_autotoc_md22}
+
+\begin{DoxyItemize}
+\item Provide easier-\/to-\/use and ready-\/to-\/deploy out of the box API. Integrates a wide range of features including\+:
+\begin{DoxyItemize}
+\item \mbox{[}x\mbox{]} GPIO
+\item \mbox{[}x\mbox{]} Power Management
+\item \mbox{[}x\mbox{]} MQTT
+\item \mbox{[}x\mbox{]} SPI
+\item \mbox{[} \mbox{]} ADC
+\item \mbox{[} \mbox{]} I2C
+\item \mbox{[} \mbox{]} GPS
+\item \mbox{[} \mbox{]} OTA
+\item \mbox{[} \mbox{]} Call
+\item \mbox{[} \mbox{]} SMS
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md23}{}\doxysection{Hardware connection}\label{index_autotoc_md23}
+\hypertarget{index_autotoc_md24}{}\doxysubsection{Module Debugging and Firmware Download}\label{index_autotoc_md24}
+The download interface to the device is the HST interface. Depending upon how the power is being supplied to the board(pudding), the following connections are required in the minimum to provision firmware download into the device or to debug the logs.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ USB to TTL module   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Dev Board(pudding)    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ USB to TTL module   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Dev Board(pudding)    }\\\cline{1-2}
+\endhead
+TX   &HST\+\_\+\+RX    \\\cline{1-2}
+RX   &HST\+\_\+\+TX    \\\cline{1-2}
+GND   &GND   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{index_autotoc_md25}{}\doxysubsection{Power Supply}\label{index_autotoc_md25}
+The power can be supplied by a lithium battery or an fixed external supply(ie 3.\+8v $\sim$ 4.\+2v) to the {\ttfamily VBAT} pin. Alternatively, it can also be connected to 5v power supply (5v input pin or USB input). However, it should be noted that if using lithium battery as power supply POWER KEY needs to be pressed for about 3 seconds to power on the module. This is not required when powered through USB.\hypertarget{index_autotoc_md26}{}\doxysection{Setting up the build environment}\label{index_autotoc_md26}
+\hypertarget{index_autotoc_md27}{}\doxysubsection{Windows}\label{index_autotoc_md27}
+\hypertarget{index_autotoc_md28}{}\doxysubsubsection{Download the SDK\+:}\label{index_autotoc_md28}
+
+\begin{DoxyItemize}
+\item Download the latest released archive from \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases}{\texttt{ github release page}} or clone directly.(need to install {\ttfamily git}) \`{}\`{}\`{} git clone \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git}{\texttt{ https\+://github.\+com/\+Ai-\/\+Thinker-\/\+Open/\+GPRS\+\_\+\+C\+\_\+\+SDK.\+git}} --recursive \`{}\`{}\`{} \begin{quote}
+This repo has been tested on \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a}{\texttt{ this version}} \end{quote}
+$\ast$ Decompress the CSDK downloaded to GPRS\+\_\+\+C\+\_\+\+SDK folder into a directory, such as $\sim$/projects/\+GPRS\+\_\+\+C\+\_\+\+SDK.
+\end{DoxyItemize}\hypertarget{index_autotoc_md29}{}\doxysubsubsection{Download and install the toolchain\+:}\label{index_autotoc_md29}
+
+\begin{DoxyItemize}
+\item Download the toolchain \href{https://github.com/zkemble/GPRS_C_SDK/releases/download/v2.129/CSDTK42_Update2_18_7_27.7z}{\texttt{ here}}.
+\item Decompress the downloaded file into a folder.
+\item Run {\ttfamily config\+\_\+env\+\_\+admin.\+bat} file in CSDTK to set environment variables required.
+\end{DoxyItemize}\hypertarget{index_autotoc_md30}{}\doxysubsubsection{Compile a demo app\+:}\label{index_autotoc_md30}
+
+\begin{DoxyItemize}
+\item Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then {\ttfamily Open Power\+Shell window here}.
+\item Then you can use {\ttfamily ./build.bat} script to build project.
+\begin{DoxyItemize}
+\item {\ttfamily ./build.bat demo \$\+PROJ}\+: compile demo project \$\+PROJ e.\+g.\+: {\ttfamily ./build.bat demo gpio}
+\item {\ttfamily ./build.bat clean \$\+PROJ}\+: clear the build files of \$\+PROJ e.\+g.\+: {\ttfamily ./build.bat clean gpio}
+\item {\ttfamily ./build.bat clean all}\+: clear all build files
+\item {\ttfamily ./build.bat demo \$\+PROJ release}\+: build a release version. If the last parameter is not release, it will be defaulted to debug version. The GDB can be used to debug errors after system crashes in debug version, but release version can not, watch dog activate in release version,it will auto restart system when system crashed! e.\+g.\+: {\ttfamily ./build.bat demo gpio release}
+\end{DoxyItemize}
+\item A {\ttfamily build} folder and a {\ttfamily hex} folder will be generated after compilation containing the build files.
+\item In the {\ttfamily hex} folder, two $\ast$.lod files will be generated. These $\ast$.lod files are the target file that are to be flashed into the dev board.
+\item The two $\ast$.lod files will be significantly different in their sizes. The larger file should be flashed when\+:
+\begin{DoxyItemize}
+\item Flashing for the first time
+\item If SDK level changes have been made ~\newline
+ Else, the smaller file can be flashed in order to reduce the download time significantly.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md31}{}\doxysubsection{Linux}\label{index_autotoc_md31}
+\hypertarget{index_autotoc_md32}{}\doxysubsubsection{Download the SDK\+:}\label{index_autotoc_md32}
+
+\begin{DoxyItemize}
+\item Create a project folder {\ttfamily projects} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir \string~/projects}
+
+\end{DoxyCode}
+
+\item Download the latest released archive from \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases}{\texttt{ github release page}} or clone directly(need to install {\ttfamily git}) \`{}\`{}\`{} git clone \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git}{\texttt{ https\+://github.\+com/\+Ai-\/\+Thinker-\/\+Open/\+GPRS\+\_\+\+C\+\_\+\+SDK.\+git}} --recursive \`{}\`{}\`{} \begin{quote}
+This repo has been tested on \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a}{\texttt{ this version}} \end{quote}
+$\ast$ Decompress the CSDK downloaded to GPRS\+\_\+\+C\+\_\+\+SDK folder into the directory, such as $\sim$/projects/\+GPRS\+\_\+\+C\+\_\+\+SDK.
+\end{DoxyItemize}\hypertarget{index_autotoc_md33}{}\doxysubsubsection{Download and install the toolchain\+:}\label{index_autotoc_md33}
+
+\begin{DoxyItemize}
+\item Install dependencies for compile tool 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install build-\/essential gcc-\/multilib g++-\/multilib libzip-\/dev zlib1g lib32z1 libpng12-\/0 libusb-\/0.1-\/4}
+
+\end{DoxyCode}
+
+\item Since the official download links in the official Ai-\/\+Thinker website is dead, download the toolchain \href{https://github.com/pulkin/csdtk42-linux}{\texttt{ here}}
+\item Decompress the downloaded file to a folder, $\sim$/software/\+CSDTK for example, and then execute setup.\+sh, the first parameter is the location of CSDTK, the second parameter is the location of your projects. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd \string~/software}
+\DoxyCodeLine{tar -\/xzvf CSDTK42\_Linux.tar.gz}
+\DoxyCodeLine{cd CSDTK}
+\DoxyCodeLine{./setup.sh ./ \string~/projects}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{index_autotoc_md34}{}\doxysubsubsection{Compile a demo app\+:}\label{index_autotoc_md34}
+
+\begin{DoxyItemize}
+\item Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then {\ttfamily Open Power\+Shell window here}.
+\item Then you can use {\ttfamily ./build.sh} script to build project.
+\begin{DoxyItemize}
+\item {\ttfamily ./build.sh demo \$\+PROJ}\+: compile demo project \$\+PROJ e.\+g.\+: {\ttfamily ./build.sh demo gpio}
+\item {\ttfamily ./build.sh clean \$\+PROJ}\+: clear the build files of \$\+PROJ e.\+g.\+: {\ttfamily ./build.sh clean gpio}
+\item {\ttfamily ./build.sh clean all}\+: clear all build files
+\item {\ttfamily ./build.sh demo \$\+PROJ release}\+: build a release version, e.\+g.\+:./build.bat demo gpio release，if the last parameter is not release, it will be default to debug version. The GDB can be used to debug errors after system crashed in debug version, but release version can not, watch dog activate in release version,it will auto restart system when system crashed! e.\+g.\+: {\ttfamily ./build.sh demo gpio release}
+\end{DoxyItemize}
+\item A {\ttfamily build} folder and a {\ttfamily hex} folder will be generated after compilation containing the build files.
+\item In the {\ttfamily hex} folder, two $\ast$.lod files will be generated. These $\ast$.lod files are the target file that are to be flashed into the dev board.
+\item The two $\ast$.lod files will be significantly different in their sizes. The larger file should be flashed when\+:
+\begin{DoxyItemize}
+\item Flashing for the first time
+\item If SDK level changes have been made ~\newline
+ Else, the smaller file can be flashed in order to reduce the download time significantly.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md35}{}\doxysubsection{Flash and Debug\+:}\label{index_autotoc_md35}
+{\bfseries{Additional Steps for Linux\+:}} (not required for Windows)
+\begin{DoxyItemize}
+\item Install dependencies 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install build-\/essential libqt4-\/qt3support itcl3 itk3 iwidgets4}
+
+\end{DoxyCode}
+
+\item Create a link file for serial port as follows, and later you can fill in the coolwatcher\textquotesingle{}s chart with 1. The {\ttfamily COM1} must upper-\/case. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo ln -\/s /dev/ttyUSB0 comport/COM1}
+
+\end{DoxyCode}
+
+\item Then double click coolwatcher to run software
+\item Follow further steps as given in \href{https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en/c-sdk/burn-debug.html}{\texttt{ Ai-\/\+Thinker GPRS SDK documentation}}.
+\end{DoxyItemize}\hypertarget{index_autotoc_md36}{}\doxysubsection{Project structure and developing applications}\label{index_autotoc_md36}
+Each folder contains C library and their corresponding header files. To use the library files follow the steps below\+:
+
+
+\begin{DoxyItemize}
+\item Copy the lib folder of the project to be run into the \href{https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo}{\texttt{ demo}} folder of your installed SDK.
+\item Navigate into the folder and read the README.\+md file of the specific example to configure the example code if needed. For example, to test the MQTT library example, the endpoint, certificates and keys have to be provided to establish a successful connection.
+\item Build and flash the code as mentioned above.
+\end{DoxyItemize}
+
+{\bfseries{Further Detailed Doumentation}} here\+: \href{https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en}{\texttt{ GPRS C SDK DOC}}
+
+Including environment installation, burn \& debug, api docs etc.\hypertarget{index_autotoc_md37}{}\doxysubsection{Feedback}\label{index_autotoc_md37}
+
+\begin{DoxyItemize}
+\item \href{https://github.com/IoTReady/a9_libraries/issues/new}{\texttt{ create issue on github}}
+\item Click ★ {\ttfamily  Star } on the right corner of this page if this repo helps you
+\end{DoxyItemize}\hypertarget{index_autotoc_md38}{}\doxysubsection{Participate in the development}\label{index_autotoc_md38}
+Fork -\/$>$ Modify -\/$>$ Submit PR 
