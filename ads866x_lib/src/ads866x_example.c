@@ -14,11 +14,11 @@
 #include "gpio_lib.h"
 
 // Please note that the pin nomenclature has been taken with respect to the ADC's perspective
-#define SCLK_PIN     	GPIO_PIN20		// Power Down and Serial Clock Input Pin of the ADS8664
-#define DOUT_PIN     	GPIO_PIN19		// Serial Data Output Pin of the ADS8664
-#define DIN_PIN     	GPIO_PIN15		// Serial Data Input Pin of the ADS8664
+#define SCLK_PIN     	GPIO_PIN2		// Power Down and Serial Clock Input Pin of the ADS8664
+#define DOUT_PIN     	GPIO_PIN4		// Serial Data Output Pin of the ADS8664
+#define DIN_PIN     	GPIO_PIN3		// Serial Data Input Pin of the ADS8664
 #define RST_PD_PIN      GPIO_PIN14		// Hard Reset and Power Down Pin of the ADS8664
-#define CS_PIN      	GPIO_PIN17		// Chip Select Pin for the ADS8664
+#define CS_PIN      	GPIO_PIN1		// Chip Select Pin for the ADS8664
 
 #define LSBFIRST 0
 #define MSBFIRST 1
@@ -117,13 +117,17 @@ void select_channel_0()
 	gpio_set_state(CS_PIN, GPIO_LEVEL_LOW);
 	for(uint8_t i = 0; i < 32; ++i)
 	{
-		gpio_set_state(DIN_PIN, GPIO_LEVEL_HIGH);
-		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
-		if (i == 2)
+		if (i <= 2)
+			gpio_set_state(DIN_PIN, GPIO_LEVEL_HIGH);
+		else
 			gpio_set_state(DIN_PIN, GPIO_LEVEL_LOW);
+		
+		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
+		OS_Sleep(10);
 
 		gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
-		OS_SleepUs(100);
+		OS_Sleep(10);
+
 	}
 	gpio_set_state(CS_PIN, GPIO_LEVEL_HIGH);
 }
@@ -131,20 +135,17 @@ void select_channel_0()
 uint16_t shiftIn(uint8_t dout, uint8_t sclk, uint8_t bitOrder)
 {
 	uint16_t value = 0;
-	
     for(uint16_t i = 0; i < 12; ++i) 
 	{
 		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
-	OS_Sleep(10);
-
-
+		OS_Sleep(10);
         if(bitOrder == LSBFIRST)
             value |= gpio_get_state(DOUT_PIN) << i;
         else
         	value |= gpio_get_state(DOUT_PIN) << (11 - i);
 		
 		gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
-	OS_Sleep(10);
+		OS_Sleep(10);
 
     }
     return value;	
@@ -169,9 +170,9 @@ long read_value()
 	// for (uint8_t i = 0; i < 32; i++)
 	{
 		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
-	OS_Sleep(10);
+		OS_Sleep(10);
         gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
-	OS_Sleep(10);
+		OS_Sleep(10);
 	}
 
 	// Pulse the clock pin 12 times to read_value the data
@@ -180,10 +181,9 @@ long read_value()
 	for (uint8_t i = 0; i < 4; i++)
 	{
 		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
-	OS_Sleep(10);
+		OS_Sleep(10);
         gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
-	OS_Sleep(10);
-
+		OS_Sleep(10);
 	}
 
 	// Driving the CS Pin high to end the read
@@ -194,7 +194,7 @@ long read_value()
 	Trace(1,"Read Value: %u", value);
 
 	// Minimum width of CS high is 20us for a valid reading
-	// OS_SleepUs(20);
+	OS_SleepUs(20);
 
 	return value;
 }
@@ -242,7 +242,7 @@ void read_adc_MainTask()
     //     Trace(1, "SPI Initialization Successful!");
 		
 	// select_channel(ADC_CHANNEL0);
-	// select_channel_0();
+	select_channel_0();
 
 	while(1)
 	{
