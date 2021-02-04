@@ -7,6 +7,7 @@
 #include "api_hal_spi.h"
 #include "api_hal_uart.h"
 #include "api_hal_gpio.h"
+#include "api_hal_pm.h"
 #include "string.h"
 
 #include "spi_lib.h"
@@ -16,7 +17,7 @@
 #define SCLK_PIN     	GPIO_PIN20		// Power Down and Serial Clock Input Pin of the ADS8664
 #define DOUT_PIN     	GPIO_PIN19		// Serial Data Output Pin of the ADS8664
 #define DIN_PIN     	GPIO_PIN15		// Serial Data Input Pin of the ADS8664
-#define RST_PD_PIN      GPIO_PIN14		// Serial Data Input Pin of the ADS8664
+#define RST_PD_PIN      GPIO_PIN14		// Hard Reset and Power Down Pin of the ADS8664
 #define CS_PIN      	GPIO_PIN17		// Chip Select Pin for the ADS8664
 
 #define LSBFIRST 0
@@ -30,7 +31,7 @@ static HANDLE mainTaskHandle = NULL;
 
 typedef enum{
     ADC_CHANNEL0 = 0,   // output    mode
-    ADC_CHANNEL1,        // input     mode
+    ADC_CHANNEL1,       // input     mode
     ADC_CHANNEL2,    	// interrupt mode
     ADC_CHANNEL3
 }ADC_CHANNEL;
@@ -42,19 +43,19 @@ bool initialize_spi_pins()
 	GPIO_config_t sclk_conf = {
 		.mode         = GPIO_MODE_OUTPUT,
 		.pin          = SCLK_PIN,
-		.defaultLevel = NULL
+		.defaultLevel = GPIO_LEVEL_LOW
 	};
 
 	GPIO_config_t dout_conf = {
 		.mode         = GPIO_MODE_INPUT,
 		.pin          = DOUT_PIN,
-		.defaultLevel = NULL
+		.defaultLevel = GPIO_LEVEL_LOW
 	};
 
 	GPIO_config_t din_conf = {
 		.mode         = GPIO_MODE_OUTPUT,
 		.pin          = DIN_PIN,
-		.defaultLevel = NULL
+		.defaultLevel = GPIO_LEVEL_LOW
 	};
 
 	GPIO_config_t rst_pd_conf = {
@@ -100,7 +101,7 @@ bool initialize_spi_pins()
 	err = GPIO_Init(cs_conf);
 	if(!err)
 	{
-		Trace(1,"Initializing GPIO %d failed!", rst_pd_conf.pin);
+		Trace(1,"Initializing GPIO %d failed!", cs_conf.pin);
 		return false;
 	}
 
@@ -109,29 +110,22 @@ bool initialize_spi_pins()
 
 void yield(void) {};
 
-void select_channel(ADC_CHANNEL channel)
+void select_channel_0()
 {
-	switch(channel)
+	Trace(1,"Selecting ADS866x channel 0!");
+
+	gpio_set_state(CS_PIN, GPIO_LEVEL_LOW);
+	for(uint8_t i = 0; i < 32; ++i)
 	{
-		Trace(1,"Selecting ADS866x channel %d!", channel);
+		gpio_set_state(DIN_PIN, GPIO_LEVEL_HIGH);
+		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
+		if (i == 2)
+			gpio_set_state(DIN_PIN, GPIO_LEVEL_LOW);
 
-		case ADC_CHANNEL0:
-			gpio_set_state(CS_PIN, GPIO_LEVEL_LOW);
-			for(uint8_t i = 0; i < 16; ++i)
-			{
-				gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
-				if (i < 2)
-					gpio_set_state(DIN_PIN, GPIO_LEVEL_HIGH);
-				else
-					gpio_set_state(DIN_PIN, GPIO_LEVEL_LOW);
-				gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
-			}
-			gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
-			break;
-
-		default:
-			break;
+		gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
+		OS_SleepUs(100);
 	}
+	gpio_set_state(CS_PIN, GPIO_LEVEL_HIGH);
 }
 
 uint16_t shiftIn(uint8_t dout, uint8_t sclk, uint8_t bitOrder)
@@ -141,15 +135,17 @@ uint16_t shiftIn(uint8_t dout, uint8_t sclk, uint8_t bitOrder)
     for(uint16_t i = 0; i < 12; ++i) 
 	{
 		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
+	OS_Sleep(10);
+
 
         if(bitOrder == LSBFIRST)
             value |= gpio_get_state(DOUT_PIN) << i;
         else
         	value |= gpio_get_state(DOUT_PIN) << (11 - i);
 		
-		OS_Sleep(5);
-		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
-		OS_Sleep(10);
+		gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
+	OS_Sleep(10);
+
     }
     return value;	
 } 
@@ -165,22 +161,40 @@ long read_value()
 
 	// Driving the CS Pin low to initiate a read
 	gpio_set_state(CS_PIN, GPIO_LEVEL_LOW);
+	OS_Sleep(50);
+
 
 	// Pulse the clock pin 16 times to allow conversion
 	for (uint8_t i = 0; i < 16; i++)
+	// for (uint8_t i = 0; i < 32; i++)
 	{
 		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
+	OS_Sleep(10);
         gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
+	OS_Sleep(10);
 	}
 
 	// Pulse the clock pin 12 times to read_value the data
 	data = shiftIn(DOUT_PIN, SCLK_PIN, MSBFIRST);
 
+	for (uint8_t i = 0; i < 4; i++)
+	{
+		gpio_set_state(SCLK_PIN, GPIO_LEVEL_HIGH);
+	OS_Sleep(10);
+        gpio_set_state(SCLK_PIN, GPIO_LEVEL_LOW);
+	OS_Sleep(10);
+
+	}
+
 	// Driving the CS Pin high to end the read
-	gpio_set_state(CS_PIN, GPIO_LEVEL_LOW);
+	gpio_set_state(CS_PIN, GPIO_LEVEL_HIGH);
+	OS_Sleep(50);
 
 	value = (uint32_t)data;
-	Trace(1,"Read Value: %u \n", value);
+	Trace(1,"Read Value: %u", value);
+
+	// Minimum width of CS high is 20us for a valid reading
+	// OS_SleepUs(20);
 
 	return value;
 }
@@ -204,6 +218,11 @@ long read_average( uint8_t times)
 
 void read_adc_MainTask()
 {
+	OS_Sleep(10000);
+	
+	for(uint8_t i=0;i<POWER_TYPE_MAX;++i)
+        PM_PowerEnable(i,true);
+
 	bool err = initialize_spi_pins();
 	if (!err)
     {
@@ -213,21 +232,22 @@ void read_adc_MainTask()
     else
         Trace(1, "SPI Pins Initialization Successful!");
 
-    err = init_spi_direct_polling(SPI1, SPI_CS_0, 1000000, SPI_LINE_4, false, 0, 0, true, SPI_DATA_BITS_8);
-    if (err == false)
-    {
-        Trace(1, "SPI Initialization Failed!");
-        return;
-    }
-    else
-        Trace(1, "SPI Initialization Successful!");
+    // err = init_spi_direct_polling(SPI1, SPI_CS_0, 1000000, SPI_LINE_4, false, 0, 0, true, SPI_DATA_BITS_8);
+    // if (err == false)
+    // {
+    //     Trace(1, "SPI Initialization Failed!");
+    //     return;
+    // }
+    // else
+    //     Trace(1, "SPI Initialization Successful!");
 		
-	select_channel(ADC_CHANNEL0);
+	// select_channel(ADC_CHANNEL0);
+	// select_channel_0();
 
 	while(1)
 	{
 		read_average(10);
-		OS_Sleep(500);
+		// OS_Sleep(500);
 	}
 }
 
