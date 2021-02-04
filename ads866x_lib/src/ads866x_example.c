@@ -17,7 +17,7 @@
 #define SCLK_PIN     	GPIO_PIN2		// Power Down and Serial Clock Input Pin of the ADS8664
 #define DOUT_PIN     	GPIO_PIN4		// Serial Data Output Pin of the ADS8664
 #define DIN_PIN     	GPIO_PIN3		// Serial Data Input Pin of the ADS8664
-#define RST_PD_PIN      GPIO_PIN14		// Hard Reset and Power Down Pin of the ADS8664
+#define RST_PD_PIN      GPIO_PIN5		// Hard Reset and Power Down Pin of the ADS8664
 #define CS_PIN      	GPIO_PIN1		// Chip Select Pin for the ADS8664
 
 #define LSBFIRST 0
@@ -38,6 +38,11 @@ typedef enum{
 
 bool initialize_spi_pins()
 {
+	// for(uint8_t i=0;i<POWER_TYPE_MAX;++i)
+    //     PM_PowerEnable(i,true);
+
+	PM_PowerEnable(POWER_TYPE_VPAD, true);
+
 	bool err;
 
 	GPIO_config_t sclk_conf = {
@@ -219,9 +224,6 @@ long read_average( uint8_t times)
 void read_adc_MainTask()
 {
 	OS_Sleep(10000);
-	
-	for(uint8_t i=0;i<POWER_TYPE_MAX;++i)
-        PM_PowerEnable(i,true);
 
 	bool err = initialize_spi_pins();
 	if (!err)
