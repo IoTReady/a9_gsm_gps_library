@@ -62,9 +62,34 @@ typedef enum{
 #define ADS1015_CONFIG_MUX_DIFF_P1_N3  (0x2000)
 #define ADS1015_CONFIG_MUX_DIFF_P2_N3  (0x3000)
 
-// uint16_t getSingleEnded(uint8_t channel, ADS1015_Sampling sample_rate, ADS1015_Gain gain);
+/**
+ * @brief  Get ADC raw reading for a single-ended analog input
+ * 
+ *
+ * @param id                I2C ID of the bus used. Check I2C_ID_t
+ * @param channel           ADC analog channel
+ * @param sample_rate       Sampling rate. Check ADS1015_Sampling
+ * @param gain              Programmable Gain Amplifier(PGA) setting. Check ADS1015_Gain
+ * 
+ * 
+ * @return uint16_t: The raw reading for single-ended input
+ * 
+ */
 uint16_t getSingleEnded(I2C_ID_t id, uint8_t channel, uint16_t sample_rate, uint16_t gain);
 
+/**
+ * @brief  Get ADC millivolts reading for a single-ended analog input
+ * 
+ *
+ * @param id                I2C ID of the bus used. Check I2C_ID_t
+ * @param channel           ADC analog channel
+ * @param sample_rate       Sampling rate. Check ADS1015_Sampling
+ * @param gain              Programmable Gain Amplifier(PGA) setting. Check ADS1015_Gain
+ * 
+ * 
+ * @return float: The millivolt reading for single-ended input
+ * 
+ */
 float getMilliVolts(I2C_ID_t id, uint8_t channel, uint16_t sample_rate, uint16_t gain);
 
 #endif
