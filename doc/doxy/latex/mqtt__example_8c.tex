@@ -1,0 +1,162 @@
+\hypertarget{mqtt__example_8c}{}\doxysection{a9\+\_\+mqtt\+\_\+lib/src/mqtt\+\_\+example.c File Reference}
+\label{mqtt__example_8c}\index{a9\_mqtt\_lib/src/mqtt\_example.c@{a9\_mqtt\_lib/src/mqtt\_example.c}}
+{\ttfamily \#include \char`\"{}stdbool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+os.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+event.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+mqtt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+network.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+socket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mqtt\+\_\+lib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}certs.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mqtt__example_8c_a77eb3a65d54628cb2726c2963d0812c1}{MAIN\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE}}~(2048 $\ast$ 2)
+\item 
+\#define \mbox{\hyperlink{mqtt__example_8c_aefeffa5cfb9654e78b33f577b6d7564d}{MAIN\+\_\+\+TASK\+\_\+\+PRIORITY}}~0
+\item 
+\#define \mbox{\hyperlink{mqtt__example_8c_a9ac245dc88743b95d8c238c0161922ac}{MAIN\+\_\+\+TASK\+\_\+\+NAME}}~\char`\"{}Main Test Task\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mqtt__example_8c_aafdc8470d9db2290d0c9b581bdfff8e8}{SECOND\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE}}~(2048 $\ast$ 2)
+\item 
+\#define \mbox{\hyperlink{mqtt__example_8c_a58fc95dd193ebd2e6c0b221c945d99d9}{SECOND\+\_\+\+TASK\+\_\+\+PRIORITY}}~1
+\item 
+\#define \mbox{\hyperlink{mqtt__example_8c_abad40005b81760c9ad98b7aa350c53d8}{SECOND\+\_\+\+TASK\+\_\+\+NAME}}~\char`\"{}MQTT Test Task\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a94b40a65bdff7d48c2071fa9e54d44fd}{Start\+Timer\+Publish}} (uint32\+\_\+t interval, MQTT\+\_\+\+Client\+\_\+t $\ast$client)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_aad67ed66bdb6abb170503ee94a3d7671}{On\+Mqtt\+Received}} (void $\ast$arg, const char $\ast$topic, uint32\+\_\+t payload\+Len)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a766bc7683e3578d04ca20e4188a97809}{On\+Mqtt\+Received\+Data}} (void $\ast$arg, const uint8\+\_\+t $\ast$data, uint16\+\_\+t len, MQTT\+\_\+\+Flags\+\_\+t flags)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a128bf1c63d7a6b0070edbea435ddd99a}{On\+Mqtt\+Subscribed}} (void $\ast$arg, MQTT\+\_\+\+Error\+\_\+t err)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a3fc58cf809dfca834b4b722269f249c3}{On\+Mqtt\+Connection}} (MQTT\+\_\+\+Client\+\_\+t $\ast$client, void $\ast$arg, MQTT\+\_\+\+Connection\+\_\+\+Status\+\_\+t status)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a4724e811e3d080a7907998ca52df7e35}{On\+Publish}} (void $\ast$arg, MQTT\+\_\+\+Error\+\_\+t err)
+\item 
+MQTT\+\_\+\+Error\+\_\+t \mbox{\hyperlink{mqtt__example_8c_a45134cd05a108b2c0cd6da8609ed0158}{On\+Timer\+Publish}} (void $\ast$param)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a7b4c888c2316837068b3b30a9d258abd}{Second\+Task\+Event\+Dispatch}} (\mbox{\hyperlink{struct_m_q_t_t___event__t}{MQTT\+\_\+\+Event\+\_\+t}} $\ast$p\+Event)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_ab66ef3bd2933b32aaa2ccd60ca8c5d1b}{Second\+Task}} (void $\ast$p\+Data)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a960d2ab2012b2db309b0b2ba845c576a}{Main\+Task}} (void $\ast$p\+Data)
+\item 
+void \mbox{\hyperlink{mqtt__example_8c_a5cb3551ff2a332ad247e3570ace2da20}{a9\+\_\+mqtt\+\_\+lib\+\_\+\+Main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mqtt__example_8c_a9ac245dc88743b95d8c238c0161922ac}\label{mqtt__example_8c_a9ac245dc88743b95d8c238c0161922ac}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!MAIN\_TASK\_NAME@{MAIN\_TASK\_NAME}}
+\index{MAIN\_TASK\_NAME@{MAIN\_TASK\_NAME}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{MAIN\_TASK\_NAME}{MAIN\_TASK\_NAME}}
+{\footnotesize\ttfamily \#define MAIN\+\_\+\+TASK\+\_\+\+NAME~\char`\"{}Main Test Task\char`\"{}}
+
+\mbox{\Hypertarget{mqtt__example_8c_aefeffa5cfb9654e78b33f577b6d7564d}\label{mqtt__example_8c_aefeffa5cfb9654e78b33f577b6d7564d}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!MAIN\_TASK\_PRIORITY@{MAIN\_TASK\_PRIORITY}}
+\index{MAIN\_TASK\_PRIORITY@{MAIN\_TASK\_PRIORITY}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{MAIN\_TASK\_PRIORITY}{MAIN\_TASK\_PRIORITY}}
+{\footnotesize\ttfamily \#define MAIN\+\_\+\+TASK\+\_\+\+PRIORITY~0}
+
+\mbox{\Hypertarget{mqtt__example_8c_a77eb3a65d54628cb2726c2963d0812c1}\label{mqtt__example_8c_a77eb3a65d54628cb2726c2963d0812c1}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!MAIN\_TASK\_STACK\_SIZE@{MAIN\_TASK\_STACK\_SIZE}}
+\index{MAIN\_TASK\_STACK\_SIZE@{MAIN\_TASK\_STACK\_SIZE}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{MAIN\_TASK\_STACK\_SIZE}{MAIN\_TASK\_STACK\_SIZE}}
+{\footnotesize\ttfamily \#define MAIN\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE~(2048 $\ast$ 2)}
+
+\mbox{\Hypertarget{mqtt__example_8c_abad40005b81760c9ad98b7aa350c53d8}\label{mqtt__example_8c_abad40005b81760c9ad98b7aa350c53d8}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!SECOND\_TASK\_NAME@{SECOND\_TASK\_NAME}}
+\index{SECOND\_TASK\_NAME@{SECOND\_TASK\_NAME}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{SECOND\_TASK\_NAME}{SECOND\_TASK\_NAME}}
+{\footnotesize\ttfamily \#define SECOND\+\_\+\+TASK\+\_\+\+NAME~\char`\"{}MQTT Test Task\char`\"{}}
+
+\mbox{\Hypertarget{mqtt__example_8c_a58fc95dd193ebd2e6c0b221c945d99d9}\label{mqtt__example_8c_a58fc95dd193ebd2e6c0b221c945d99d9}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!SECOND\_TASK\_PRIORITY@{SECOND\_TASK\_PRIORITY}}
+\index{SECOND\_TASK\_PRIORITY@{SECOND\_TASK\_PRIORITY}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{SECOND\_TASK\_PRIORITY}{SECOND\_TASK\_PRIORITY}}
+{\footnotesize\ttfamily \#define SECOND\+\_\+\+TASK\+\_\+\+PRIORITY~1}
+
+\mbox{\Hypertarget{mqtt__example_8c_aafdc8470d9db2290d0c9b581bdfff8e8}\label{mqtt__example_8c_aafdc8470d9db2290d0c9b581bdfff8e8}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!SECOND\_TASK\_STACK\_SIZE@{SECOND\_TASK\_STACK\_SIZE}}
+\index{SECOND\_TASK\_STACK\_SIZE@{SECOND\_TASK\_STACK\_SIZE}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{SECOND\_TASK\_STACK\_SIZE}{SECOND\_TASK\_STACK\_SIZE}}
+{\footnotesize\ttfamily \#define SECOND\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE~(2048 $\ast$ 2)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mqtt__example_8c_a5cb3551ff2a332ad247e3570ace2da20}\label{mqtt__example_8c_a5cb3551ff2a332ad247e3570ace2da20}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!a9\_mqtt\_lib\_Main@{a9\_mqtt\_lib\_Main}}
+\index{a9\_mqtt\_lib\_Main@{a9\_mqtt\_lib\_Main}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{a9\_mqtt\_lib\_Main()}{a9\_mqtt\_lib\_Main()}}
+{\footnotesize\ttfamily void a9\+\_\+mqtt\+\_\+lib\+\_\+\+Main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a960d2ab2012b2db309b0b2ba845c576a}\label{mqtt__example_8c_a960d2ab2012b2db309b0b2ba845c576a}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!MainTask@{MainTask}}
+\index{MainTask@{MainTask}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{MainTask()}{MainTask()}}
+{\footnotesize\ttfamily void Main\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a3fc58cf809dfca834b4b722269f249c3}\label{mqtt__example_8c_a3fc58cf809dfca834b4b722269f249c3}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!OnMqttConnection@{OnMqttConnection}}
+\index{OnMqttConnection@{OnMqttConnection}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{OnMqttConnection()}{OnMqttConnection()}}
+{\footnotesize\ttfamily void On\+Mqtt\+Connection (\begin{DoxyParamCaption}\item[{MQTT\+\_\+\+Client\+\_\+t $\ast$}]{client,  }\item[{void $\ast$}]{arg,  }\item[{MQTT\+\_\+\+Connection\+\_\+\+Status\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+!! DO NOT suscribe here(interrupt function), do MQTT suscribe in task, or it will not execute\mbox{\Hypertarget{mqtt__example_8c_aad67ed66bdb6abb170503ee94a3d7671}\label{mqtt__example_8c_aad67ed66bdb6abb170503ee94a3d7671}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!OnMqttReceived@{OnMqttReceived}}
+\index{OnMqttReceived@{OnMqttReceived}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{OnMqttReceived()}{OnMqttReceived()}}
+{\footnotesize\ttfamily void On\+Mqtt\+Received (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{const char $\ast$}]{topic,  }\item[{uint32\+\_\+t}]{payload\+Len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a766bc7683e3578d04ca20e4188a97809}\label{mqtt__example_8c_a766bc7683e3578d04ca20e4188a97809}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!OnMqttReceivedData@{OnMqttReceivedData}}
+\index{OnMqttReceivedData@{OnMqttReceivedData}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{OnMqttReceivedData()}{OnMqttReceivedData()}}
+{\footnotesize\ttfamily void On\+Mqtt\+Received\+Data (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{const uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{len,  }\item[{MQTT\+\_\+\+Flags\+\_\+t}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a128bf1c63d7a6b0070edbea435ddd99a}\label{mqtt__example_8c_a128bf1c63d7a6b0070edbea435ddd99a}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!OnMqttSubscribed@{OnMqttSubscribed}}
+\index{OnMqttSubscribed@{OnMqttSubscribed}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{OnMqttSubscribed()}{OnMqttSubscribed()}}
+{\footnotesize\ttfamily void On\+Mqtt\+Subscribed (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{MQTT\+\_\+\+Error\+\_\+t}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a4724e811e3d080a7907998ca52df7e35}\label{mqtt__example_8c_a4724e811e3d080a7907998ca52df7e35}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!OnPublish@{OnPublish}}
+\index{OnPublish@{OnPublish}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{OnPublish()}{OnPublish()}}
+{\footnotesize\ttfamily void On\+Publish (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{MQTT\+\_\+\+Error\+\_\+t}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a45134cd05a108b2c0cd6da8609ed0158}\label{mqtt__example_8c_a45134cd05a108b2c0cd6da8609ed0158}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!OnTimerPublish@{OnTimerPublish}}
+\index{OnTimerPublish@{OnTimerPublish}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{OnTimerPublish()}{OnTimerPublish()}}
+{\footnotesize\ttfamily MQTT\+\_\+\+Error\+\_\+t On\+Timer\+Publish (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_ab66ef3bd2933b32aaa2ccd60ca8c5d1b}\label{mqtt__example_8c_ab66ef3bd2933b32aaa2ccd60ca8c5d1b}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!SecondTask@{SecondTask}}
+\index{SecondTask@{SecondTask}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{SecondTask()}{SecondTask()}}
+{\footnotesize\ttfamily void Second\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a7b4c888c2316837068b3b30a9d258abd}\label{mqtt__example_8c_a7b4c888c2316837068b3b30a9d258abd}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!SecondTaskEventDispatch@{SecondTaskEventDispatch}}
+\index{SecondTaskEventDispatch@{SecondTaskEventDispatch}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{SecondTaskEventDispatch()}{SecondTaskEventDispatch()}}
+{\footnotesize\ttfamily void Second\+Task\+Event\+Dispatch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_q_t_t___event__t}{MQTT\+\_\+\+Event\+\_\+t}} $\ast$}]{p\+Event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt__example_8c_a94b40a65bdff7d48c2071fa9e54d44fd}\label{mqtt__example_8c_a94b40a65bdff7d48c2071fa9e54d44fd}} 
+\index{mqtt\_example.c@{mqtt\_example.c}!StartTimerPublish@{StartTimerPublish}}
+\index{StartTimerPublish@{StartTimerPublish}!mqtt\_example.c@{mqtt\_example.c}}
+\doxysubsubsection{\texorpdfstring{StartTimerPublish()}{StartTimerPublish()}}
+{\footnotesize\ttfamily void Start\+Timer\+Publish (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{interval,  }\item[{MQTT\+\_\+\+Client\+\_\+t $\ast$}]{client }\end{DoxyParamCaption})}
+

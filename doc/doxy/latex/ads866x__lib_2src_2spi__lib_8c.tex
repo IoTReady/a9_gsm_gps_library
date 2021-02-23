@@ -1,0 +1,270 @@
+\hypertarget{ads866x__lib_2src_2spi__lib_8c}{}\doxysection{ads866x\+\_\+lib/src/spi\+\_\+lib.c File Reference}
+\label{ads866x__lib_2src_2spi__lib_8c}\index{ads866x\_lib/src/spi\_lib.c@{ads866x\_lib/src/spi\_lib.c}}
+{\ttfamily \#include \char`\"{}stdint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdbool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+os.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+hal\+\_\+spi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api\+\_\+hal\+\_\+uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_a21025abe99f944f0f4f1a7ce740d988b}{init\+\_\+spi\+\_\+direct\+\_\+polling}} (SPI\+\_\+\+ID\+\_\+t SPIx, SPI\+\_\+\+CS\+\_\+t chip\+\_\+select, uint32\+\_\+t freq, SPI\+\_\+\+Line\+\_\+t line, bool tx\+\_\+only, uint8\+\_\+t clk\+\_\+polarity, uint8\+\_\+t clk\+\_\+phase, bool cs\+\_\+active\+\_\+low, SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t data\+\_\+bits)
+\begin{DoxyCompactList}\small\item\em Initialize SPI with direct polling. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_a26894d563c24c52fc082e085079a242a}{init\+\_\+spi\+\_\+dma\+\_\+polling}} (SPI\+\_\+\+ID\+\_\+t SPIx, SPI\+\_\+\+CS\+\_\+t chip\+\_\+select, uint32\+\_\+t freq, SPI\+\_\+\+Line\+\_\+t line, bool tx\+\_\+only, uint8\+\_\+t clk\+\_\+polarity, uint8\+\_\+t clk\+\_\+phase, bool cs\+\_\+active\+\_\+low, SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t data\+\_\+bits)
+\begin{DoxyCompactList}\small\item\em Initialize SPI with DMA polling. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_a5fead569d668a79ef4ccc6dcb6464439}{init\+\_\+spi\+\_\+direct\+\_\+irq}} (SPI\+\_\+\+ID\+\_\+t SPIx, SPI\+\_\+\+CS\+\_\+t chip\+\_\+select, uint32\+\_\+t freq, SPI\+\_\+\+Line\+\_\+t line, bool tx\+\_\+only, uint8\+\_\+t clk\+\_\+polarity, uint8\+\_\+t clk\+\_\+phase, bool cs\+\_\+active\+\_\+low, SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t data\+\_\+bits, SPI\+\_\+\+Irq\+\_\+\+Handler\+\_\+t irq\+\_\+handler, SPI\+\_\+\+Irq\+\_\+\+Flags\+\_\+t irq\+\_\+mask)
+\begin{DoxyCompactList}\small\item\em Initialize SPI with Direct IRQ. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_ab3e416c6ff38d56b6ec2a22d24eb1faa}{init\+\_\+spi\+\_\+dma\+\_\+irq}} (SPI\+\_\+\+ID\+\_\+t SPIx, SPI\+\_\+\+CS\+\_\+t chip\+\_\+select, uint32\+\_\+t freq, SPI\+\_\+\+Line\+\_\+t line, bool tx\+\_\+only, uint8\+\_\+t clk\+\_\+polarity, uint8\+\_\+t clk\+\_\+phase, bool cs\+\_\+active\+\_\+low, SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t data\+\_\+bits, SPI\+\_\+\+Irq\+\_\+\+Handler\+\_\+t irq\+\_\+handler, SPI\+\_\+\+Irq\+\_\+\+Flags\+\_\+t irq\+\_\+mask)
+\begin{DoxyCompactList}\small\item\em Initialize SPI with DMA IRQ. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_a9595f3065afd136c4ca5db78ce04f0cd}{SPI\+\_\+\+Read\+One\+Byte}} (SPI\+\_\+\+ID\+\_\+t SPIx)
+\begin{DoxyCompactList}\small\item\em Read one byte from the SPI. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_a3b73329a484334559ad9eb94431b1b79}{SPI\+\_\+\+Write\+Read\+Data}} (SPI\+\_\+\+ID\+\_\+t SPIx, uint8\+\_\+t $\ast$s\+\_\+data, uint8\+\_\+t $\ast$r\+\_\+data, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Read and Write data to SPI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_a02e8bb3e1d2f0bdbef202a336257c569}{SPI\+\_\+\+Write\+Read\+Byte}} (SPI\+\_\+\+ID\+\_\+t SPIx, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Read one byte from the SPI. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{ads866x__lib_2src_2spi__lib_8c_ab4d15ef0c77b6360b25700df0af3348c}{SPI\+\_\+\+Dma\+Read\+Write\+Data}} (SPI\+\_\+\+ID\+\_\+t SPIx, uint8\+\_\+t $\ast$s\+\_\+addr, uint8\+\_\+t $\ast$r\+\_\+addr, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Read and Write data to SPI in DMA mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_a5fead569d668a79ef4ccc6dcb6464439}\label{ads866x__lib_2src_2spi__lib_8c_a5fead569d668a79ef4ccc6dcb6464439}} 
+\index{spi\_lib.c@{spi\_lib.c}!init\_spi\_direct\_irq@{init\_spi\_direct\_irq}}
+\index{init\_spi\_direct\_irq@{init\_spi\_direct\_irq}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{init\_spi\_direct\_irq()}{init\_spi\_direct\_irq()}}
+{\footnotesize\ttfamily bool init\+\_\+spi\+\_\+direct\+\_\+irq (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx,  }\item[{SPI\+\_\+\+CS\+\_\+t}]{chip\+\_\+select,  }\item[{uint32\+\_\+t}]{freq,  }\item[{SPI\+\_\+\+Line\+\_\+t}]{line,  }\item[{bool}]{tx\+\_\+only,  }\item[{uint8\+\_\+t}]{clk\+\_\+polarity,  }\item[{uint8\+\_\+t}]{clk\+\_\+phase,  }\item[{bool}]{cs\+\_\+active\+\_\+low,  }\item[{SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t}]{data\+\_\+bits,  }\item[{SPI\+\_\+\+Irq\+\_\+\+Handler\+\_\+t}]{irq\+\_\+handler,  }\item[{SPI\+\_\+\+Irq\+\_\+\+Flags\+\_\+t}]{irq\+\_\+mask }\end{DoxyParamCaption})}
+
+
+
+Initialize SPI with Direct IRQ. 
+
+The application sends/receives the data directly to/from the hardware module. The number of bytes actually sent/received is returned. An Irq can be generated when the Tx/\+Rx FIFO reaches the pre-\/programmed level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number \\
+\hline
+{\em chip\+\_\+select} & Select the CS pin \\
+\hline
+{\em freq} & SPI clock frequency in bits/s; up to 13Mbits/s (SPI\+\_\+\+FREQ\+\_\+\+MAX) \\
+\hline
+{\em line} & Number of SPI Lines \\
+\hline
+{\em tx\+\_\+only} & SPI tx only false\+: tx only disable true\+: tx only enable \\
+\hline
+{\em clk\+\_\+polarity} & SPI Clk Polarity 0\+: when SPI is free,clk line is in low level 1\+: when SPI is free,clk line is in high level \\
+\hline
+{\em clk\+\_\+phase} & SPI Clk Phase 0\+: SPI sampling data at the first edge 1\+: SPI sampling data at the second edge \\
+\hline
+{\em cs\+\_\+active\+\_\+low} & SPI CS Active Polarity true\+: CS Active Low false\+: CS Active High \\
+\hline
+{\em data\+\_\+bits} & SPI framesize \\
+\hline
+{\em irq\+\_\+handler} & Interrupt Handler \\
+\hline
+{\em irq\+\_\+mask} & SPI Interrupt flags\+: check SPI\+\_\+\+Irq\+\_\+\+Flags\+\_\+t struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: return true if init success or false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_a21025abe99f944f0f4f1a7ce740d988b}\label{ads866x__lib_2src_2spi__lib_8c_a21025abe99f944f0f4f1a7ce740d988b}} 
+\index{spi\_lib.c@{spi\_lib.c}!init\_spi\_direct\_polling@{init\_spi\_direct\_polling}}
+\index{init\_spi\_direct\_polling@{init\_spi\_direct\_polling}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{init\_spi\_direct\_polling()}{init\_spi\_direct\_polling()}}
+{\footnotesize\ttfamily bool init\+\_\+spi\+\_\+direct\+\_\+polling (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx,  }\item[{SPI\+\_\+\+CS\+\_\+t}]{chip\+\_\+select,  }\item[{uint32\+\_\+t}]{freq,  }\item[{SPI\+\_\+\+Line\+\_\+t}]{line,  }\item[{bool}]{tx\+\_\+only,  }\item[{uint8\+\_\+t}]{clk\+\_\+polarity,  }\item[{uint8\+\_\+t}]{clk\+\_\+phase,  }\item[{bool}]{cs\+\_\+active\+\_\+low,  }\item[{SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t}]{data\+\_\+bits }\end{DoxyParamCaption})}
+
+
+
+Initialize SPI with direct polling. 
+
+The application sends/receives the data directly to/from the hardware module. The number of bytes actually sent/received is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number \\
+\hline
+{\em chip\+\_\+select} & Select the CS pin \\
+\hline
+{\em freq} & SPI clock frequency in bits/s; up to 13Mbits/s (SPI\+\_\+\+FREQ\+\_\+\+MAX) \\
+\hline
+{\em line} & Number of SPI Lines \\
+\hline
+{\em tx\+\_\+only} & SPI tx only false\+: tx only disable true\+: tx only enable \\
+\hline
+{\em clk\+\_\+polarity} & SPI Clk Polarity 0\+: when SPI is free,clk line is in low level 1\+: when SPI is free,clk line is in high level \\
+\hline
+{\em clk\+\_\+phase} & SPI Clk Phase 0\+: SPI sampling data at the first edge 1\+: SPI sampling data at the second edge \\
+\hline
+{\em cs\+\_\+active\+\_\+low} & SPI CS Active Polarity true\+: CS Active Low false\+: CS Active High \\
+\hline
+{\em data\+\_\+bits} & SPI framesize\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: return true if init success or false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_ab3e416c6ff38d56b6ec2a22d24eb1faa}\label{ads866x__lib_2src_2spi__lib_8c_ab3e416c6ff38d56b6ec2a22d24eb1faa}} 
+\index{spi\_lib.c@{spi\_lib.c}!init\_spi\_dma\_irq@{init\_spi\_dma\_irq}}
+\index{init\_spi\_dma\_irq@{init\_spi\_dma\_irq}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{init\_spi\_dma\_irq()}{init\_spi\_dma\_irq()}}
+{\footnotesize\ttfamily bool init\+\_\+spi\+\_\+dma\+\_\+irq (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx,  }\item[{SPI\+\_\+\+CS\+\_\+t}]{chip\+\_\+select,  }\item[{uint32\+\_\+t}]{freq,  }\item[{SPI\+\_\+\+Line\+\_\+t}]{line,  }\item[{bool}]{tx\+\_\+only,  }\item[{uint8\+\_\+t}]{clk\+\_\+polarity,  }\item[{uint8\+\_\+t}]{clk\+\_\+phase,  }\item[{bool}]{cs\+\_\+active\+\_\+low,  }\item[{SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t}]{data\+\_\+bits,  }\item[{SPI\+\_\+\+Irq\+\_\+\+Handler\+\_\+t}]{irq\+\_\+handler,  }\item[{SPI\+\_\+\+Irq\+\_\+\+Flags\+\_\+t}]{irq\+\_\+mask }\end{DoxyParamCaption})}
+
+
+
+Initialize SPI with DMA IRQ. 
+
+The application sends/receives the data through a DMA to the hardware module. The function returns 0 when no DMA channel is available. No bytes are sent. The function returns the number of bytes to send when a DMA resource is available. They will all be sent. An IRQ is generated when the current transfer is finished. No new DMA transfer in the same direction will be allowed before the end of the previous transfer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number \\
+\hline
+{\em chip\+\_\+select} & Select the CS pin \\
+\hline
+{\em freq} & SPI clock frequency in bits/s; up to 13Mbits/s (SPI\+\_\+\+FREQ\+\_\+\+MAX) \\
+\hline
+{\em line} & Number of SPI Lines \\
+\hline
+{\em tx\+\_\+only} & SPI tx only false\+: tx only disable true\+: tx only enable \\
+\hline
+{\em clk\+\_\+polarity} & SPI Clk Polarity 0\+: when SPI is free,clk line is in low level 1\+: when SPI is free,clk line is in high level \\
+\hline
+{\em clk\+\_\+phase} & SPI Clk Phase 0\+: SPI sampling data at the first edge 1\+: SPI sampling data at the second edge \\
+\hline
+{\em cs\+\_\+active\+\_\+low} & SPI CS Active Polarity true\+: CS Active Low false\+: CS Active High \\
+\hline
+{\em data\+\_\+bits} & SPI framesize \\
+\hline
+{\em irq\+\_\+handler} & Interrupt Handler \\
+\hline
+{\em irq\+\_\+mask} & SPI Interrupt flags\+: check SPI\+\_\+\+Irq\+\_\+\+Flags\+\_\+t struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: return true if init success or false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_a26894d563c24c52fc082e085079a242a}\label{ads866x__lib_2src_2spi__lib_8c_a26894d563c24c52fc082e085079a242a}} 
+\index{spi\_lib.c@{spi\_lib.c}!init\_spi\_dma\_polling@{init\_spi\_dma\_polling}}
+\index{init\_spi\_dma\_polling@{init\_spi\_dma\_polling}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{init\_spi\_dma\_polling()}{init\_spi\_dma\_polling()}}
+{\footnotesize\ttfamily bool init\+\_\+spi\+\_\+dma\+\_\+polling (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx,  }\item[{SPI\+\_\+\+CS\+\_\+t}]{chip\+\_\+select,  }\item[{uint32\+\_\+t}]{freq,  }\item[{SPI\+\_\+\+Line\+\_\+t}]{line,  }\item[{bool}]{tx\+\_\+only,  }\item[{uint8\+\_\+t}]{clk\+\_\+polarity,  }\item[{uint8\+\_\+t}]{clk\+\_\+phase,  }\item[{bool}]{cs\+\_\+active\+\_\+low,  }\item[{SPI\+\_\+\+Data\+\_\+\+Bits\+\_\+t}]{data\+\_\+bits }\end{DoxyParamCaption})}
+
+
+
+Initialize SPI with DMA polling. 
+
+The application sends/receives the data through a DMA to the hardware module. The function returns 0 when no DMA channel is available. No bytes are sent. The function returns the number of bytes to send when a DMA resource is available. They will all be sent. A function allows to check if the previous DMA transfer is finished. No new DMA transfer in the same direction will be allowed before the end of the previous transfer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number \\
+\hline
+{\em chip\+\_\+select} & Select the CS pin \\
+\hline
+{\em freq} & SPI clock frequency in bits/s; up to 13Mbits/s (SPI\+\_\+\+FREQ\+\_\+\+MAX) \\
+\hline
+{\em line} & Number of SPI Lines \\
+\hline
+{\em tx\+\_\+only} & SPI tx only false\+: tx only disable true\+: tx only enable \\
+\hline
+{\em clk\+\_\+polarity} & SPI Clk Polarity 0\+: when SPI is free,clk line is in low level 1\+: when SPI is free,clk line is in high level \\
+\hline
+{\em clk\+\_\+phase} & SPI Clk Phase 0\+: SPI sampling data at the first edge 1\+: SPI sampling data at the second edge \\
+\hline
+{\em cs\+\_\+active\+\_\+low} & SPI CS Active Polarity true\+: CS Active Low false\+: CS Active High \\
+\hline
+{\em data\+\_\+bits} & SPI framesize\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: return true if init success or false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_ab4d15ef0c77b6360b25700df0af3348c}\label{ads866x__lib_2src_2spi__lib_8c_ab4d15ef0c77b6360b25700df0af3348c}} 
+\index{spi\_lib.c@{spi\_lib.c}!SPI\_DmaReadWriteData@{SPI\_DmaReadWriteData}}
+\index{SPI\_DmaReadWriteData@{SPI\_DmaReadWriteData}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_DmaReadWriteData()}{SPI\_DmaReadWriteData()}}
+{\footnotesize\ttfamily uint32\+\_\+t SPI\+\_\+\+Dma\+Read\+Write\+Data (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx,  }\item[{uint8\+\_\+t $\ast$}]{s\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{r\+\_\+addr,  }\item[{uint32\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Read and Write data to SPI in DMA mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number \\
+\hline
+{\em s\+\_\+addr} & Starting address of data to be sent \\
+\hline
+{\em r\+\_\+addr} & Starting address of data receive buffer \\
+\hline
+{\em length} & The length of data to be read/sent\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t\+: The length of data written/read 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_a9595f3065afd136c4ca5db78ce04f0cd}\label{ads866x__lib_2src_2spi__lib_8c_a9595f3065afd136c4ca5db78ce04f0cd}} 
+\index{spi\_lib.c@{spi\_lib.c}!SPI\_ReadOneByte@{SPI\_ReadOneByte}}
+\index{SPI\_ReadOneByte@{SPI\_ReadOneByte}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_ReadOneByte()}{SPI\_ReadOneByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t SPI\+\_\+\+Read\+One\+Byte (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx }\end{DoxyParamCaption})}
+
+
+
+Read one byte from the SPI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t\+: One byte data read from SPI 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_a02e8bb3e1d2f0bdbef202a336257c569}\label{ads866x__lib_2src_2spi__lib_8c_a02e8bb3e1d2f0bdbef202a336257c569}} 
+\index{spi\_lib.c@{spi\_lib.c}!SPI\_WriteReadByte@{SPI\_WriteReadByte}}
+\index{SPI\_WriteReadByte@{SPI\_WriteReadByte}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_WriteReadByte()}{SPI\_WriteReadByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t SPI\+\_\+\+Write\+Read\+Byte (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Read one byte from the SPI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number \\
+\hline
+{\em data} & Data byte to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t\+: One byte data read from SPI 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ads866x__lib_2src_2spi__lib_8c_a3b73329a484334559ad9eb94431b1b79}\label{ads866x__lib_2src_2spi__lib_8c_a3b73329a484334559ad9eb94431b1b79}} 
+\index{spi\_lib.c@{spi\_lib.c}!SPI\_WriteReadData@{SPI\_WriteReadData}}
+\index{SPI\_WriteReadData@{SPI\_WriteReadData}!spi\_lib.c@{spi\_lib.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_WriteReadData()}{SPI\_WriteReadData()}}
+{\footnotesize\ttfamily uint32\+\_\+t SPI\+\_\+\+Write\+Read\+Data (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+ID\+\_\+t}]{SPIx,  }\item[{uint8\+\_\+t $\ast$}]{s\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{r\+\_\+data,  }\item[{uint32\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Read and Write data to SPI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SPIx} & SPI number \\
+\hline
+{\em s\+\_\+data} & Data to be sent \\
+\hline
+{\em r\+\_\+data} & Data receive buffer \\
+\hline
+{\em length} & The length of data to be read/sent\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t\+: The length of data written/read 
+\end{DoxyReturn}
