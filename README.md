@@ -85,6 +85,7 @@ Therefore, in order to download or debug, you need at least one USB to serial po
   - [x] MQTT
   - [x] SPI
   - [x] I2C
+  - [x] Integration with ADS1015 over I2C
   - [ ] ADC
   - [ ] GPS
   - [ ] OTA
