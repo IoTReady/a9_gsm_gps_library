@@ -84,8 +84,8 @@ Therefore, in order to download or debug, you need at least one USB to serial po
   - [x] Power Management
   - [x] MQTT
   - [x] SPI
+  - [x] I2C
   - [ ] ADC
-  - [ ] I2C
   - [ ] GPS
   - [ ] OTA
   - [ ] Call
