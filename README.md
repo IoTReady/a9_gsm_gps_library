@@ -1,8 +1,23 @@
 # Ai-Thinker GPRS modules- A9/A9G Libraries using [Ai-Thinker GPRS C SDK](https://github.com/Ai-Thinker-Open/GPRS-C-SDK)
 
-Wrapper over most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9G for simpler setup and faster deployability.
+## Overview
+This SDK provides a wrapper over the most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9G making for simpler setup and faster deployability.
 
+**Features**
 
+* Provides an easier-to-use and ready-to-deploy out of the box API. Integrates a wide range of features including:
+  - [x] GPIO
+  - [x] Power Management
+  - [x] MQTT
+  - [x] SPI
+  - [x] I2C
+  - [x] Integration with ADS1015 over I2C
+  - [ ] ADC
+  - [ ] GPS
+  - [ ] OTA
+  - [ ] Call
+  - [ ] SMS
+  
 ## Hardware
 
 ### 1. [A9: GPRS Module](http://www.ai-thinker.com/pro_view-9.html)
@@ -49,7 +64,7 @@ A9/A9G development board for easy development and debugging
 **Schematics of the pudding development boards here: [A9](./doc/Schematics/a9-dev-schematic_v1.2.pdf) | [A9G](./doc/Schematics/a9g-dev-schematic_v1.2.pdf)**
 
 **Features**:
-  * 1 A9G module (the board be the same that with A9 and A9G, for the A9 and A9G in the same package, the same pin )
+  * 1 A9G module (the board is the same for the A9 and A9G, they use identical packages with the same pinouts.)
   * 29 GPIOs with 2.45mm spacing (with 2 download debug pins (`HST_TX`,` HST_RX`)
   * One SIM card slot (Nano Card <Micro Card <Standard Card)
   * 1 TF card slot
@@ -63,40 +78,21 @@ A9/A9G development board for easy development and debugging
   * 1 microphone </br>
 ![](./doc/assets/pudding_pin.png) </br>
 
-> Or you can use other RDA8955 chip related module or board
+> Or you can use other RDA8955 chip modules or board
 
 ### 4. USB to Serial Module
 
 ![](./doc/assets/USB-UART.png) </br>
-It should be noted that the USB interface on the development board is not a USB serial port function, but USB1.1 function,
-Therefore, in order to download or debug, you need at least one USB to serial port module to connect board's `HST_TX` and` HST_RX` pin
+It should be noted that the USB interface on the development board does not implement a USB serial port, but is a standard USB1.1 interface,
+Therefore, in order to download or debug, you need at least one USB to serial port translator module to connect to the board's `HST_TX` and` HST_RX` pins
 
 ### 5. Power Supply
-* board can be light up with 5V(with DC-DC on dev-board) or 4.2V(`VBAT`) power, and ensure supply enough current(Peak current 2A)
-* if use lithium battery connected to `VBAT`, you must press <kbd>power-key</kbd> for a while to power up the module, or just pull down the `power-key` pin.
-* if `VUSB` connected with 5V(`VBAT` must supply with power ), the module will automaticly power up no matter `power-key` poll down or not.
-
-## SDK
-
-### Features
-* Provide easier-to-use and ready-to-deploy out of the box API. Integrates a wide range of features including:
-  - [x] GPIO
-  - [x] Power Management
-  - [x] MQTT
-  - [x] SPI
-  - [x] I2C
-  - [x] Integration with ADS1015 over I2C
-  - [ ] ADC
-  - [ ] GPS
-  - [ ] OTA
-  - [ ] Call
-  - [ ] SMS
-
+Power can be supplied by a lithium battery or a fixed external supply (3.8v ~ 4.2v) to the `VBAT` pin. Alternatively, it can also be powered by 5v power connected to the 5v input pin or USB input. However, it should be noted that if using alithium battery as power supply POWER KEY needs to be pressed for about 3 seconds to power on the module. This is not required when powered through USB.
 
 ## Hardware connection
 
 ### Module Debugging and Firmware Download
-The download interface to the device is the HST interface. Depending upon how the power is being supplied to the board(pudding), the following connections are required in the minimum to provision firmware download into the device or to debug the logs.
+The download interface to the device is the HST interface. Depending upon how the power is being supplied to the board(pudding), the following connections are required at the minimum to provision firmware download into the device or to debug the logs.
 
 | USB to TTL module | Dev Board(pudding) |
 | -----------  | -----------   |
@@ -105,7 +101,7 @@ The download interface to the device is the HST interface. Depending upon how th
 | GND          | GND           |
 
 ### Power Supply
-The power can be supplied by a lithium battery or an fixed external supply(ie 3.8v ~ 4.2v) to the `VBAT` pin. Alternatively, it can also be connected to 5v power supply (5v input pin or USB input). However, it should be noted that if using lithium battery as power supply POWER KEY needs to be pressed for about 3 seconds to power on the module. This is not required when powered through USB.
+
 
 
 # Setting up the build environment
@@ -113,7 +109,7 @@ The power can be supplied by a lithium battery or an fixed external supply(ie 3.
 ## Windows
 
 ### Download the SDK:
-* Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly.(need to install `git`)
+* Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly (need to have installed `git`).
     ```
     git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git --recursive
     ```
@@ -126,16 +122,18 @@ The power can be supplied by a lithium battery or an fixed external supply(ie 3.
 * Run `config_env_admin.bat` file in CSDTK to set environment variables required.
 
 ### Compile a demo app:
-* Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then `Open PowerShell window here`.
-* Then you can use `./build.bat` script to build project.
+* Navigate into the CSDK folder，right click your mouse in the blank space in the folder with shift key pressed, then `Open PowerShell window here`.
+* Then you can use the  `./build.bat` script to build the project.
 
     * ````./build.bat demo $PROJ````: compile demo project $PROJ
         e.g.: ````./build.bat demo gpio````
     * ````./build.bat clean $PROJ````: clear the build files of $PROJ
         e.g.: ````./build.bat clean gpio````
     * ````./build.bat clean all````: clear all build files
-    * ````./build.bat demo $PROJ release````: build a release version. If the last parameter is not release, it will be defaulted to debug version. The GDB can be used to debug errors after system crashes in debug version, but release version can not, watch dog activate in release version,it will auto restart system when system crashed!
-        e.g.: ````./build.bat demo gpio release````
+    * ````./build.bat demo $PROJ release````: build a release version.  e.g.: ````./build.bat demo gpio release```` 
+    
+    If the last parameter is not `release`, the build default is to generate the debug version. The GDB can be used to debug errors after system crashes in the debug version The release version can not be used with GDB, crashes will result in the watch dog timer activating and it will auto restart the system when the system crashes!
+       
 * A `build` folder and a `hex` folder will be generated after compilation containing the build files.
 * In the `hex` folder, two \*.lod files will be generated. These \*.lod files are the target file that are to be flashed into the dev board.
 * The two \*.lod files will be significantly different in their sizes. The larger file should be flashed when:
@@ -181,7 +179,9 @@ sudo apt install build-essential gcc-multilib g++-multilib libzip-dev zlib1g lib
     * ````./build.sh clean $PROJ````: clear the build files of $PROJ
         e.g.: ````./build.sh clean gpio````
     * ````./build.sh clean all````: clear all build files
-    * ````./build.sh demo $PROJ release````: build a release version, e.g.:./build.bat demo gpio release，if the last parameter is not release, it will be default to debug version. The GDB can be used to debug errors after system crashed in debug version, but release version can not, watch dog activate in release version,it will auto restart system when system crashed!
+    * ````./build.sh demo $PROJ release````: e.g.: ````./build.sh demo gpio release```` 
+    
+    If the last parameter is not `release`, the build default is to generate the debug version. The GDB can be used to debug errors after system crashes in the debug version The release version can not be used with GDB, crashes will result in the watch dog timer activating and it will auto restart the system when the system crashes!
         e.g.: ````./build.sh demo gpio release````
 * A `build` folder and a `hex` folder will be generated after compilation containing the build files.
 * In the `hex` folder, two \*.lod files will be generated. These \*.lod files are the target file that are to be flashed into the dev board.
@@ -210,7 +210,7 @@ sudo ln -s /dev/ttyUSB0 comport/COM1
 
 ## Project structure and developing applications
 
-Each folder contains C library and their corresponding header files. To use the library files follow the steps below:
+Each folder contains the C library and corresponding header files. To use the library files follow the steps below:
 
 - Copy the lib folder of the project to be run into the [demo](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo) folder of your installed SDK.
 - Navigate into the folder and read the README.md file of the specific example to configure the example code if needed. For example, to test the MQTT library example, the endpoint, certificates and keys have to be provided to establish a successful connection.
