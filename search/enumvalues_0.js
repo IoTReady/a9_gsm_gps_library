@@ -1,7 +1,24 @@
 var searchData=
 [
-  ['adc_5fchannel0_198',['ADC_CHANNEL0',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92a128a6aef9e871beb488880dc1e5ed436',1,'ads866x_example.c']]],
-  ['adc_5fchannel1_199',['ADC_CHANNEL1',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92aa46518d4da91e4b82d8c539f32815a2b',1,'ads866x_example.c']]],
-  ['adc_5fchannel2_200',['ADC_CHANNEL2',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92a2ec5fc9ecdcbf1640cf21049def8178e',1,'ads866x_example.c']]],
-  ['adc_5fchannel3_201',['ADC_CHANNEL3',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92a5c649a124982b6b84875cd65daccc327',1,'ads866x_example.c']]]
+  ['adc_5fchannel0_272',['ADC_CHANNEL0',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92a128a6aef9e871beb488880dc1e5ed436',1,'ads866x_example.c']]],
+  ['adc_5fchannel1_273',['ADC_CHANNEL1',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92aa46518d4da91e4b82d8c539f32815a2b',1,'ads866x_example.c']]],
+  ['adc_5fchannel2_274',['ADC_CHANNEL2',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92a2ec5fc9ecdcbf1640cf21049def8178e',1,'ads866x_example.c']]],
+  ['adc_5fchannel3_275',['ADC_CHANNEL3',['../ads866x__example_8c.html#aecdfe48b0bc36d2dd1f99274613a6c92a5c649a124982b6b84875cd65daccc327',1,'ads866x_example.c']]],
+  ['ads1015_5faddress_5fgnd_276',['ADS1015_ADDRESS_GND',['../ads1015_8h.html#aec8cfa348b0dc934893991639248c323ad6ea666f17e03fc72298a47983a1e5af',1,'ads1015.h']]],
+  ['ads1015_5faddress_5fscl_277',['ADS1015_ADDRESS_SCL',['../ads1015_8h.html#aec8cfa348b0dc934893991639248c323a5b91e396f52fc9638d342607571639aa',1,'ads1015.h']]],
+  ['ads1015_5faddress_5fsda_278',['ADS1015_ADDRESS_SDA',['../ads1015_8h.html#aec8cfa348b0dc934893991639248c323a2437056a1719a7e6f1a6875de913d75f',1,'ads1015.h']]],
+  ['ads1015_5faddress_5fvdd_279',['ADS1015_ADDRESS_VDD',['../ads1015_8h.html#aec8cfa348b0dc934893991639248c323ad07ebc79c34233b0870257a48decae6f',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5fpga_5f1_280',['ADS1015_CONFIG_PGA_1',['../ads1015_8h.html#ab0708ea66f2181727d0942a442417a88abed984403852728ea3611840a95931cd',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5fpga_5f16_281',['ADS1015_CONFIG_PGA_16',['../ads1015_8h.html#ab0708ea66f2181727d0942a442417a88a9f595d4d216bda89d885337ed9134fdf',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5fpga_5f2_282',['ADS1015_CONFIG_PGA_2',['../ads1015_8h.html#ab0708ea66f2181727d0942a442417a88ae2703ae03d8db2108de790185c3a4da2',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5fpga_5f4_283',['ADS1015_CONFIG_PGA_4',['../ads1015_8h.html#ab0708ea66f2181727d0942a442417a88ab268e7b1b858706d6cba37c126c23955',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5fpga_5f8_284',['ADS1015_CONFIG_PGA_8',['../ads1015_8h.html#ab0708ea66f2181727d0942a442417a88a7a14d7f62a77aa68b3f37efca4f5f8d5',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5fpga_5ftwothirds_285',['ADS1015_CONFIG_PGA_TWOTHIRDS',['../ads1015_8h.html#ab0708ea66f2181727d0942a442417a88ae030307e0cce94bfa792422a71b80ee8',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5frate_5f128hz_286',['ADS1015_CONFIG_RATE_128HZ',['../ads1015_8h.html#a8c4b1daca16aeda0e8f61ed4d246ccb7af4533e81ad87b7377f4cee0c67203316',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5frate_5f1600hz_287',['ADS1015_CONFIG_RATE_1600HZ',['../ads1015_8h.html#a8c4b1daca16aeda0e8f61ed4d246ccb7ae011b7f0163e806f186d73aa85bc726e',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5frate_5f2400hz_288',['ADS1015_CONFIG_RATE_2400HZ',['../ads1015_8h.html#a8c4b1daca16aeda0e8f61ed4d246ccb7ad46eca3301330996ae8a958652a378c8',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5frate_5f250hz_289',['ADS1015_CONFIG_RATE_250HZ',['../ads1015_8h.html#a8c4b1daca16aeda0e8f61ed4d246ccb7a56b2739ed8d7d117821c0749c0973b13',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5frate_5f3300hz_290',['ADS1015_CONFIG_RATE_3300HZ',['../ads1015_8h.html#a8c4b1daca16aeda0e8f61ed4d246ccb7a1b5cc0218facec8ca6c67772954c7bad',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5frate_5f490hz_291',['ADS1015_CONFIG_RATE_490HZ',['../ads1015_8h.html#a8c4b1daca16aeda0e8f61ed4d246ccb7a462ea5f61355799e5ad3b18a2084ef12',1,'ads1015.h']]],
+  ['ads1015_5fconfig_5frate_5f920hz_292',['ADS1015_CONFIG_RATE_920HZ',['../ads1015_8h.html#a8c4b1daca16aeda0e8f61ed4d246ccb7a9a107e50eff28a0d5c73b3f85a2d3090',1,'ads1015.h']]]
 ];
