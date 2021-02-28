@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>A9/A9G Libraries using Ai-Thinker GPRS C SDK: Ai-Thinker GPRS modules- A9/A9G Libraries using &lt;a href=&quot;https://github.com/Ai-Thinker-Open/GPRS-C-SDK&quot;&gt;Ai-Thinker GPRS C SDK&lt;/a&gt;</title>
+<title>A9/A9G Libraries using Ai-Thinker GPRS C SDK  0.1.0: Ai-Thinker GPRS modules- A9/A9G Libraries using &lt;a href=&quot;https://github.com/Ai-Thinker-Open/GPRS-C-SDK&quot;&gt;Ai-Thinker GPRS C SDK&lt;/a&gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">A9/A9G Libraries using Ai-Thinker GPRS C SDK
-   &#160;<span id="projectnumber">0.1.0</span>
+   <div id="projectname">A9/A9G Libraries using Ai-Thinker GPRS C SDK  0.1.0
    </div>
   </td>
  </tr>
@@ -86,12 +85,33 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">Ai-Thinker GPRS modules- A9/A9G Libraries using <a href="https://github.com/Ai-Thinker-Open/GPRS-C-SDK">Ai-Thinker GPRS C SDK</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> Wrapper over most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9G for simpler setup and faster deployability.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Overview</h1>
+<p>This SDK provides a wrapper over the most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9G making for simpler setup and faster deployability.</p>
+<p><b>Features</b></p>
+<ul>
+<li>Provides an easier-to-use and ready-to-deploy out of the box API. Integrates a wide range of features including:<ul>
+<li>[x] GPIO</li>
+<li>[x] Power Management</li>
+<li>[x] MQTT</li>
+<li>[x] SPI</li>
+<li>[x] I2C</li>
+<li>[x] Integration with ADS1015 over I2C</li>
+<li>[ ] ADC</li>
+<li>[ ] GPS</li>
+<li>[ ] OTA</li>
+<li>[ ] Call</li>
+<li>[ ] SMS</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Hardware</h1>
-<h2><a class="anchor" id="autotoc_md16"></a>
-1. &lt;a href="http://www.ai-thinker.com/pro_view-9.html"&gt;A9: GPRS Module&lt;/a&gt;</h2>
-<p><img src="./doc/assets/A9.png" alt="" class="inline"/> </p>
+<h2><a class="anchor" id="autotoc_md20"></a>
+1.&lt;a href="http://www.ai-thinker.com/pro_view-9.html"&gt;A9: GPRS Module&lt;/a&gt;</h2>
+<p><img src="./doc/assets/A9.png" alt="" class="inline"/> <br  />
+</p>
 <p><b>Datasheet of the A9 module <a href="./doc/Datasheets/Ai-Thinker-A9-GPRS-Series-Module-Datasheet.pdf">here</a></b></p>
 <p><b>Features</b>:</p><ul>
 <li>RDA 32 bit RISC core, frequency up to 312MHz, with 4k instruction cache, 4k data cache</li>
@@ -113,20 +133,22 @@ Hardware</h1>
 <li>Calls</li>
 <li>SMS service</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 2. &lt;a href="http://www.ai-thinker.com/pro_view-28.html"&gt;A9G: GPRS + GPS + BDS Module&lt;/a&gt;</h2>
-<p><img src="./doc/assets/A9G.png" alt="" class="inline"/> </p>
+<p><img src="./doc/assets/A9G.png" alt="" class="inline"/> <br  />
+</p>
 <p><b>Datasheet of the A9G module <a href="./doc/Datasheets/Ai-Thinker-A9G-GPRS-Series-Module-Datasheet.pdf">here</a></b></p>
 <p><b>Features</b>:</p><ul>
 <li>All the features of A9 above</li>
 <li>Integrated GPS+BDS (connected to UART2 internal of module)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 3. &lt;a href="http://www.ai-thinker.com/pro_view-78.html"&gt;A9&lt;/a&gt;/&lt;a href="http://www.ai-thinker.com/pro_view-77.html"&gt;A9G&lt;/a&gt; GPRS (+GPS+BDS) Development Board( pudding)</h2>
-<p><img src="./doc/assets/A9G_dev.png" alt="" class="inline"/>  A9/A9G development board for easy development and debugging</p>
+<p><img src="./doc/assets/A9G_dev.png" alt="" class="inline"/> <br  />
+ A9/A9G development board for easy development and debugging</p>
 <p><b>Schematics of the pudding development boards here: <a href="./doc/Schematics/a9-dev-schematic_v1.2.pdf">A9</a> | <a href="./doc/Schematics/a9g-dev-schematic_v1.2.pdf">A9G</a></b></p>
 <p><b>Features</b>:</p><ul>
-<li>1 A9G module (the board be the same that with A9 and A9G, for the A9 and A9G in the same package, the same pin )</li>
+<li>1 A9G module (the board is the same for the A9 and A9G, they use identical packages with the same pinouts.)</li>
 <li>29 GPIOs with 2.45mm spacing (with 2 download debug pins (<code>HST_TX</code>,<code>HST_RX</code>)</li>
 <li>One SIM card slot (Nano Card &lt;Micro Card &lt;Standard Card)</li>
 <li>1 TF card slot</li>
@@ -137,45 +159,25 @@ Hardware</h1>
 <li>~~1 accelerometer chip(LIS3DHx)~~(not soldered by default)</li>
 <li>1 power key, and a reset button</li>
 <li>2 LED</li>
-<li>1 microphone  <img src="./doc/assets/pudding_pin.png" alt="" class="inline"/> </li>
-</ul>
-<blockquote class="doxtable">
-<p>Or you can use other RDA8955 chip related module or board </p>
-</blockquote>
-<h2><a class="anchor" id="autotoc_md19"></a>
-4. USB to Serial Module</h2>
-<p><img src="./doc/assets/USB-UART.png" alt="" class="inline"/>  It should be noted that the USB interface on the development board is not a USB serial port function, but USB1.1 function, Therefore, in order to download or debug, you need at least one USB to serial port module to connect board's <code>HST_TX</code> and<code>HST_RX</code> pin</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
-5. Power Supply</h2>
-<ul>
-<li>board can be light up with 5V(with DC-DC on dev-board) or 4.2V(<code>VBAT</code>) power, and ensure supply enough current(Peak current 2A)</li>
-<li>if use lithium battery connected to <code>VBAT</code>, you must press <code>power-key</code> for a while to power up the module, or just pull down the <code>power-key</code> pin.</li>
-<li>if <code>VUSB</code> connected with 5V(<code>VBAT</code> must supply with power ), the module will automaticly power up no matter <code>power-key</code> poll down or not.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md21"></a>
-SDK</h1>
-<h2><a class="anchor" id="autotoc_md22"></a>
-Features</h2>
-<ul>
-<li>Provide easier-to-use and ready-to-deploy out of the box API. Integrates a wide range of features including:<ul>
-<li>[x] GPIO</li>
-<li>[x] Power Management</li>
-<li>[x] MQTT</li>
-<li>[x] SPI</li>
-<li>[ ] ADC</li>
-<li>[ ] I2C</li>
-<li>[ ] GPS</li>
-<li>[ ] OTA</li>
-<li>[ ] Call</li>
-<li>[ ] SMS</li>
-</ul>
+<li>1 microphone <br  />
+ <img src="./doc/assets/pudding_pin.png" alt="" class="inline"/> <br  />
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md23"></a>
-Hardware connection</h1>
+<blockquote class="doxtable">
+<p>Or you can use other RDA8955 chip modules or board </p>
+</blockquote>
+<h2><a class="anchor" id="autotoc_md23"></a>
+4. USB to Serial Module</h2>
+<p><img src="./doc/assets/USB-UART.png" alt="" class="inline"/> <br  />
+ It should be noted that the USB interface on the development board does not implement a USB serial port, but is a standard USB1.1 interface, Therefore, in order to download or debug, you need at least one USB to serial port translator module to connect to the board's <code>HST_TX</code> and<code>HST_RX</code> pins</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
+5. Power Supply</h2>
+<p>Power can be supplied by a lithium battery or a fixed external supply (3.8v ~ 4.2v) to the <code>VBAT</code> pin. Alternatively, it can also be powered by 5v power connected to the 5v input pin or USB input. However, it should be noted that if using alithium battery as power supply POWER KEY needs to be pressed for about 3 seconds to power on the module. This is not required when powered through USB.</p>
+<h1><a class="anchor" id="autotoc_md25"></a>
+Hardware connection</h1>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Module Debugging and Firmware Download</h2>
-<p>The download interface to the device is the HST interface. Depending upon how the power is being supplied to the board(pudding), the following connections are required in the minimum to provision firmware download into the device or to debug the logs.</p>
+<p>The download interface to the device is the HST interface. Depending upon how the power is being supplied to the board(pudding), the following connections are required at the minimum to provision firmware download into the device or to debug the logs.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">USB to TTL module   </th><th class="markdownTableHeadNone">Dev Board(pudding)    </th></tr>
@@ -186,38 +188,38 @@ Module Debugging and Firmware Download</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">GND   </td><td class="markdownTableBodyNone">GND   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md25"></a>
-Power Supply</h2>
-<p>The power can be supplied by a lithium battery or an fixed external supply(ie 3.8v ~ 4.2v) to the <code>VBAT</code> pin. Alternatively, it can also be connected to 5v power supply (5v input pin or USB input). However, it should be noted that if using lithium battery as power supply POWER KEY needs to be pressed for about 3 seconds to power on the module. This is not required when powered through USB.</p>
-<h1><a class="anchor" id="autotoc_md26"></a>
-Setting up the build environment</h1>
 <h2><a class="anchor" id="autotoc_md27"></a>
+Power Supply</h2>
+<h1><a class="anchor" id="autotoc_md28"></a>
+Setting up the build environment</h1>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Windows</h2>
-<h3><a class="anchor" id="autotoc_md28"></a>
+<h3><a class="anchor" id="autotoc_md30"></a>
 Download the SDK:</h3>
 <ul>
-<li>Download the latest released archive from <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases">github release page</a> or clone directly.(need to install <code>git</code>) ``` git clone <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git">https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git</a> &ndash;recursive ``` <blockquote class="doxtable">
+<li>Download the latest released archive from <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases">github release page</a> or clone directly (need to have installed <code>git</code>). ``` git clone <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git">https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git</a> &ndash;recursive ``` <blockquote class="doxtable">
 <p>This repo has been tested on <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a">this version</a> </p>
 </blockquote>
 * Decompress the CSDK downloaded to GPRS_C_SDK folder into a directory, such as ~/projects/GPRS_C_SDK.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md29"></a>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Download and install the toolchain:</h3>
 <ul>
 <li>Download the toolchain <a href="https://github.com/zkemble/GPRS_C_SDK/releases/download/v2.129/CSDTK42_Update2_18_7_27.7z">here</a>.</li>
 <li>Decompress the downloaded file into a folder.</li>
 <li>Run <code>config_env_admin.bat</code> file in CSDTK to set environment variables required.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md30"></a>
+<h3><a class="anchor" id="autotoc_md32"></a>
 Compile a demo app:</h3>
 <ul>
-<li>Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then <code>Open PowerShell window here</code>.</li>
-<li>Then you can use <code>./build.bat</code> script to build project.<ul>
+<li>Navigate into the CSDK folder，right click your mouse in the blank space in the folder with shift key pressed, then <code>Open PowerShell window here</code>.</li>
+<li><p class="startli">Then you can use the <code>./build.bat</code> script to build the project.</p><ul>
 <li><code>./build.bat demo $PROJ</code>: compile demo project $PROJ e.g.: <code>./build.bat demo gpio</code></li>
 <li><code>./build.bat clean $PROJ</code>: clear the build files of $PROJ e.g.: <code>./build.bat clean gpio</code></li>
 <li><code>./build.bat clean all</code>: clear all build files</li>
-<li><code>./build.bat demo $PROJ release</code>: build a release version. If the last parameter is not release, it will be defaulted to debug version. The GDB can be used to debug errors after system crashes in debug version, but release version can not, watch dog activate in release version,it will auto restart system when system crashed! e.g.: <code>./build.bat demo gpio release</code></li>
+<li><code>./build.bat demo $PROJ release</code>: build a release version. e.g.: <code>./build.bat demo gpio release</code></li>
 </ul>
+<p class="startli">If the last parameter is not <code>release</code>, the build default is to generate the debug version. The GDB can be used to debug errors after system crashes in the debug version The release version can not be used with GDB, crashes will result in the watch dog timer activating and it will auto restart the system when the system crashes!</p>
 </li>
 <li>A <code>build</code> folder and a <code>hex</code> folder will be generated after compilation containing the build files.</li>
 <li>In the <code>hex</code> folder, two *.lod files will be generated. These *.lod files are the target file that are to be flashed into the dev board.</li>
@@ -228,9 +230,9 @@ Compile a demo app:</h3>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Linux</h2>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<h3><a class="anchor" id="autotoc_md34"></a>
 Download the SDK:</h3>
 <ul>
 <li>Create a project folder <code>projects</code> <div class="fragment"><div class="line">mkdir ~/projects</div>
@@ -240,7 +242,7 @@ Download the SDK:</h3>
 </blockquote>
 * Decompress the CSDK downloaded to GPRS_C_SDK folder into the directory, such as ~/projects/GPRS_C_SDK.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md35"></a>
 Download and install the toolchain:</h3>
 <ul>
 <li>Install dependencies for compile tool <div class="fragment"><div class="line">sudo apt install build-essential gcc-multilib g++-multilib libzip-dev zlib1g lib32z1 libpng12-0 libusb-0.1-4</div>
@@ -252,16 +254,17 @@ Download and install the toolchain:</h3>
 <div class="line">./setup.sh ./ ~/projects</div>
 </div><!-- fragment --></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md36"></a>
 Compile a demo app:</h3>
 <ul>
 <li>Navigate into the CSDK folder，right click mouse in the blank space in the folder with shift key pressed, then <code>Open PowerShell window here</code>.</li>
-<li>Then you can use <code>./build.sh</code> script to build project.<ul>
+<li><p class="startli">Then you can use <code>./build.sh</code> script to build project.</p><ul>
 <li><code>./build.sh demo $PROJ</code>: compile demo project $PROJ e.g.: <code>./build.sh demo gpio</code></li>
 <li><code>./build.sh clean $PROJ</code>: clear the build files of $PROJ e.g.: <code>./build.sh clean gpio</code></li>
 <li><code>./build.sh clean all</code>: clear all build files</li>
-<li><code>./build.sh demo $PROJ release</code>: build a release version, e.g.:./build.bat demo gpio release，if the last parameter is not release, it will be default to debug version. The GDB can be used to debug errors after system crashed in debug version, but release version can not, watch dog activate in release version,it will auto restart system when system crashed! e.g.: <code>./build.sh demo gpio release</code></li>
+<li><code>./build.sh demo $PROJ release</code>: e.g.: <code>./build.sh demo gpio release</code></li>
 </ul>
+<p class="startli">If the last parameter is not <code>release</code>, the build default is to generate the debug version. The GDB can be used to debug errors after system crashes in the debug version The release version can not be used with GDB, crashes will result in the watch dog timer activating and it will auto restart the system when the system crashes! e.g.: <code>./build.sh demo gpio release</code></p>
 </li>
 <li>A <code>build</code> folder and a <code>hex</code> folder will be generated after compilation containing the build files.</li>
 <li>In the <code>hex</code> folder, two *.lod files will be generated. These *.lod files are the target file that are to be flashed into the dev board.</li>
@@ -272,7 +275,7 @@ Compile a demo app:</h3>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 Flash and Debug:</h2>
 <p><b>Additional Steps for Linux:</b> (not required for Windows)</p><ul>
 <li>Install dependencies <div class="fragment"><div class="line">sudo apt install build-essential libqt4-qt3support itcl3 itk3 iwidgets4</div>
@@ -282,9 +285,9 @@ Flash and Debug:</h2>
 <li>Then double click coolwatcher to run software</li>
 <li>Follow further steps as given in <a href="https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en/c-sdk/burn-debug.html">Ai-Thinker GPRS SDK documentation</a>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
 Project structure and developing applications</h2>
-<p>Each folder contains C library and their corresponding header files. To use the library files follow the steps below:</p>
+<p>Each folder contains the C library and corresponding header files. To use the library files follow the steps below:</p>
 <ul>
 <li>Copy the lib folder of the project to be run into the <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo">demo</a> folder of your installed SDK.</li>
 <li>Navigate into the folder and read the README.md file of the specific example to configure the example code if needed. For example, to test the MQTT library example, the endpoint, certificates and keys have to be provided to establish a successful connection.</li>
@@ -292,13 +295,13 @@ Project structure and developing applications</h2>
 </ul>
 <p><b>Further Detailed Doumentation</b> here: <a href="https://ai-thinker-open.github.io/GPRS_C_SDK_DOC/en">GPRS C SDK DOC</a></p>
 <p>Including environment installation, burn &amp; debug, api docs etc.</p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Feedback</h2>
 <ul>
 <li><a href="https://github.com/IoTReady/a9_libraries/issues/new">create issue on github</a></li>
 <li>Click ★ <code> Star </code> on the right corner of this page if this repo helps you</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 Participate in the development</h2>
 <p>Fork -&gt; Modify -&gt; Submit PR </p>
 </div></div><!-- PageDoc -->

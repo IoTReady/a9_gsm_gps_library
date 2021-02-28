@@ -20,9 +20,9 @@ This SDK provides a wrapper over the most used functionalities for the Ai-Thinke
   
 ## Hardware
 
-### 1. [A9: GPRS Module](http://www.ai-thinker.com/pro_view-9.html)
+### 1.[ A9: GPRS Module](http://www.ai-thinker.com/pro_view-9.html)
 
-![](./doc/assets/A9.png) </br>
+![](./doc/assets/A9.png) <br>
 
 **Datasheet of the A9 module [here](./doc/Datasheets/Ai-Thinker-A9-GPRS-Series-Module-Datasheet.pdf)**
 
@@ -48,7 +48,7 @@ This SDK provides a wrapper over the most used functionalities for the Ai-Thinke
 
 ### 2. [A9G: GPRS + GPS + BDS Module](http://www.ai-thinker.com/pro_view-28.html)
 
-![](./doc/assets/A9G.png) </br>
+![](./doc/assets/A9G.png) <br>
 
 **Datasheet of the A9G module [here](./doc/Datasheets/Ai-Thinker-A9G-GPRS-Series-Module-Datasheet.pdf)**
 
@@ -58,7 +58,7 @@ This SDK provides a wrapper over the most used functionalities for the Ai-Thinke
 
 ### 3. [A9](http://www.ai-thinker.com/pro_view-78.html)/[A9G](http://www.ai-thinker.com/pro_view-77.html) GPRS (+GPS+BDS) Development Board( pudding)
 
-![](./doc/assets/A9G_dev.png) </br>
+![](./doc/assets/A9G_dev.png) <br>
 A9/A9G development board for easy development and debugging
 
 **Schematics of the pudding development boards here: [A9](./doc/Schematics/a9-dev-schematic_v1.2.pdf) | [A9G](./doc/Schematics/a9g-dev-schematic_v1.2.pdf)**
@@ -75,14 +75,14 @@ A9/A9G development board for easy development and debugging
   * ~~1 accelerometer chip(LIS3DHx)~~(not soldered by default)
   * 1 power key, and a reset button
   * 2 LED
-  * 1 microphone </br>
-![](./doc/assets/pudding_pin.png) </br>
+  * 1 microphone <br>
+![](./doc/assets/pudding_pin.png) <br>
 
 > Or you can use other RDA8955 chip modules or board
 
 ### 4. USB to Serial Module
 
-![](./doc/assets/USB-UART.png) </br>
+![](./doc/assets/USB-UART.png) <br>
 It should be noted that the USB interface on the development board does not implement a USB serial port, but is a standard USB1.1 interface,
 Therefore, in order to download or debug, you need at least one USB to serial port translator module to connect to the board's `HST_TX` and` HST_RX` pins
 
