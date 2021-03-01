@@ -68,10 +68,7 @@ void SecondTask(void *pData)
     while (!isConnected(I2C_ADS, ADS1015_ADDRESS_GND))
     {
         OS_Sleep(500);
-        Trace(1,"AAAAA!");
     }
-
-    Trace(1,"BBBBB!");
 
     while(1)
     {
