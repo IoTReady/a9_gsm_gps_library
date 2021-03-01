@@ -21,7 +21,7 @@ var ads866x__example_8c =
     [ "read_adc_MainTask", "ads866x__example_8c.html#ae685ff069087560c1998c70c99fcb2d4", null ],
     [ "read_average", "ads866x__example_8c.html#af57f46dd42cdc6eb62cbd318d2ec7ca7", null ],
     [ "read_value", "ads866x__example_8c.html#ae1bb863701696cb038813287afb0c87f", null ],
-    [ "select_channel", "ads866x__example_8c.html#aeab1ab2883954ef80764a80ed0899fe7", null ],
+    [ "select_channel_0", "ads866x__example_8c.html#aac3f46ff5cd55c593deae627a374b86b", null ],
     [ "shiftIn", "ads866x__example_8c.html#a2de02d13f4cf54ff31c10dc68f7f33b6", null ],
     [ "yield", "ads866x__example_8c.html#a7cb51f5c2b5cad3766f19eb69c92793b", null ]
 ];

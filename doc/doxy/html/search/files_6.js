@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['spi_5fexample_2ec_138',['spi_example.c',['../spi__example_8c.html',1,'']]],
-  ['spi_5flib_2ec_139',['spi_lib.c',['../a9__spi__lib_2src_2spi__lib_8c.html',1,'(Global Namespace)'],['../ads866x__lib_2src_2spi__lib_8c.html',1,'(Global Namespace)']]],
-  ['spi_5flib_2eh_140',['spi_lib.h',['../a9__spi__lib_2include_2spi__lib_8h.html',1,'(Global Namespace)'],['../ads866x__lib_2include_2spi__lib_8h.html',1,'(Global Namespace)']]]
+  ['readme_2emd_198',['README.md',['../a9__gpio__lib_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../a9__i2c__lib_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../a9__mqtt__lib_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../a9__power__lib_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../a9__spi__lib_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../ads866x__lib_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../_r_e_a_d_m_e_8md.html',1,'(Global Namespace)']]]
 ];
