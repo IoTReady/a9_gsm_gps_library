@@ -1,7 +1,16 @@
 # GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)
 
-  > This README assumes that you have already setup the GPRS_C_SDK and CSTDK. If not, please follow the instructions [here](./README.md) before continuing.
-
+- This library provides a wrapper over the GPIO library over the SDK provided by Ai-Thiker.
+- It makes the job of a programmer easier in ways like gpio_get_state() **returns** the state. Normally,
+````
+    GPIO_LEVEL state;
+    GPIO_Get(gpio_num, &state);
+````
+  Using library:
+````    
+    uint8_t state = gpio_get_state(gpio_num);
+````
+- These wrapper functions not only save time, but also help programmers maintain stability with their homogeneous code.
 
 ## GPIO Example
 
@@ -16,6 +25,8 @@ This test code shows how to configure gpio and how to use gpio interrupt with th
 
 ## Running the GPIO example:
 
+  > This README assumes that you have already setup the GPRS_C_SDK and CSTDK. If not, please follow the instructions [here](./README.md) before continuing.
+ 
 - Copy the [library folder](./a9_gpio_lib) of this project into the [demo](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo) folder of your installed SDK.
 
 - Build and flash the code as mentioned [here](./README.md).
