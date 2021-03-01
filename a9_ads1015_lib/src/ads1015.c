@@ -80,18 +80,15 @@ uint16_t getSingleEnded(I2C_ID_t id, uint8_t channel, uint16_t sample_rate, uint
     // config = 0b100000001111010000000001;
     // I2C_Transmit sends LS Byte first, and since the data is 3 bytes, the LS Byte and MS Byte is interchanged
     config = (config >> 16) | (((config >> 8) & 0xFF) << 8) | ((config & 0xFF) << 16);
-    Trace(1,"CCCCC!");
 
     // err = I2C_Transmit(I2C_ADS, ADS1015_ADDRESS_GND, &config, 3, I2C_DEFAULT_TIME_OUT);
     err = i2cWrite(id, ADS1015_ADDRESS_GND, &config, 3);
     OS_Sleep(1);
-    Trace(1,"DDDDD!");
 
     uint8_t conversion_register = 0x00;
     // TODO: Test with ADS1015_POINTER_CONVERT. If does not work, uncomment above line: uint8_t conversion_register = 0x00;
     // err = I2C_Transmit(I2C_ADS, ADS1015_ADDRESS_GND, ADS1015_POINTER_CONVERT, 1, I2C_DEFAULT_TIME_OUT);
     err = i2cWrite(id, ADS1015_ADDRESS_GND, &conversion_register, 1);
-    Trace(1,"EEEEE!");
 
     // for (int i = 0; i <= 10; i++)
     // {
@@ -99,7 +96,6 @@ uint16_t getSingleEnded(I2C_ID_t id, uint8_t channel, uint16_t sample_rate, uint
     adc_val = (i2cRead16(id, ADS1015_ADDRESS_GND, 2) << 4);
         //  err = I2C_Receive(I2C_ADS, ADS1015_ADDRESS_GND, &adc_val, 2, I2C_DEFAULT_TIME_OUT);
     // }
-    Trace(1,"FFFFF!");
     Trace(1,"ADC Value = %d!", adc_val);
 
     float milliVolts = convertToMilliVolts(adc_val, gain);
