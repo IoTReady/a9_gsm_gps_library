@@ -1,7 +1,7 @@
 # ADS1015 Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)
 
 - The TI [ADS1015 ADC](https://www.ti.com/product/ADS1015) 12-Bit, 3.3kSPS, 4-Ch Delta-Sigma ADC is a well-suited chip for power and space-constrained sensor measurement applications.
-- This library provides off-the-shelf ready to use APIs to get the ADC reading with almost no other requirements to be fulfilled.
+- This library provides off-the-shelf ready-to-use APIs to get the ADC reading with almost no other requirements to be fulfilled.
 - Just initialize I2C and call getSingleEnded with the configuration parameters for your use-case and OFF YOU GO!
 - Seperate function available to get the output in millivolts, converted according to the PGA gain used in conversion. Sit back and let our functions to the job!
 

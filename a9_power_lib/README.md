@@ -1,6 +1,6 @@
 # Power Management Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)
 
-- This library provides functions with better relatable names in order to provide more simplicity and homogeneity while writing code.
+### This library provides functions with better relatable names in order to provide more simplicity and homogeneity while writing code.
 - power_get_battery() returns real-time battery voltage.
 
 ### Functions of this test example:

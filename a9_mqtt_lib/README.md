@@ -1,6 +1,6 @@
 # MQTT Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)
 
-- This library provides a higher level wrapper APIs around the functions provided by the Ai-Thinker SDK.
+### This library provides higher level wrapper APIs around the functions provided by the Ai-Thinker SDK.
 - The APIs provide easy to use functions that accept parameters for custom use-cases.
 - Single functions to initialize, subscribe and publish to MQTT brokers.
 - No need to handle complex structures. Just provide suitable parameters and you're good to go!

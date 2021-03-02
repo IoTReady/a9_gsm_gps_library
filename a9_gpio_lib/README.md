@@ -1,7 +1,7 @@
 # GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)
 
-- This library provides a wrapper over the GPIO library over the SDK provided by Ai-Thiker.
-- It makes the job of a programmer easier in ways like gpio_get_state() **returns** the state. Normally,
+- This library provides a wrapper over the GPIO library from the SDK provided by Ai-Thinker.
+- It makes the job of a programmer easier by providing more user-friendly constructs. As a simple example gpio_get_state() **returns** the state. Normally, one would access this as follows
 ````
     GPIO_LEVEL state;
     GPIO_Get(gpio_num, &state);
