@@ -25,58 +25,59 @@
 var NAVTREE =
 [
   [ "A9/A9G Libraries using Ai-Thinker GPRS C SDK  0.1.0", "index.html", [
-    [ "Ai-Thinker GPRS modules- A9/A9G Libraries using <a href=\"https://github.com/Ai-Thinker-Open/GPRS-C-SDK\">Ai-Thinker GPRS C SDK</a>", "index.html", [
-      [ "Overview", "index.html#autotoc_md18", null ],
-      [ "Hardware", "index.html#autotoc_md19", [
-        [ "1.<a href=\"http://www.ai-thinker.com/pro_view-9.html\">A9: GPRS Module</a>", "index.html#autotoc_md20", null ],
-        [ "2. <a href=\"http://www.ai-thinker.com/pro_view-28.html\">A9G: GPRS + GPS + BDS Module</a>", "index.html#autotoc_md21", null ],
-        [ "3. <a href=\"http://www.ai-thinker.com/pro_view-78.html\">A9</a>/<a href=\"http://www.ai-thinker.com/pro_view-77.html\">A9G</a> GPRS (+GPS+BDS) Development Board( pudding)", "index.html#autotoc_md22", null ],
-        [ "4. USB to Serial Module", "index.html#autotoc_md23", null ],
-        [ "5. Power Supply", "index.html#autotoc_md24", null ]
+    [ "Ai-Thinker GPRS modules- A9/A9G Libraries using [Ai-Thinker GPRS C SDK]", "index.html", [
+      [ "Overview", "index.html#autotoc_md22", null ],
+      [ "Hardware", "index.html#autotoc_md23", [
+        [ "1. A9: GPRS Module", "index.html#autotoc_md24", null ],
+        [ "2. A9G: GPRS + GPS + BDS Module", "index.html#autotoc_md25", null ],
+        [ "3. A9", "index.html#autotoc_md26", null ],
+        [ "4. USB to Serial Module", "index.html#autotoc_md27", null ],
+        [ "5. Power Supply", "index.html#autotoc_md28", null ]
       ] ],
-      [ "Hardware connection", "index.html#autotoc_md25", [
-        [ "Module Debugging and Firmware Download", "index.html#autotoc_md26", null ],
-        [ "Power Supply", "index.html#autotoc_md27", null ]
+      [ "Hardware connection", "index.html#autotoc_md29", [
+        [ "Module Debugging and Firmware Download", "index.html#autotoc_md30", null ],
+        [ "Power Supply", "index.html#autotoc_md31", null ]
       ] ],
-      [ "Setting up the build environment", "index.html#autotoc_md28", [
-        [ "Windows", "index.html#autotoc_md29", [
-          [ "Download the SDK:", "index.html#autotoc_md30", null ],
-          [ "Download and install the toolchain:", "index.html#autotoc_md31", null ],
-          [ "Compile a demo app:", "index.html#autotoc_md32", null ]
-        ] ],
-        [ "Linux", "index.html#autotoc_md33", [
+      [ "Setting up the build environment", "index.html#autotoc_md32", [
+        [ "Windows", "index.html#autotoc_md33", [
           [ "Download the SDK:", "index.html#autotoc_md34", null ],
           [ "Download and install the toolchain:", "index.html#autotoc_md35", null ],
           [ "Compile a demo app:", "index.html#autotoc_md36", null ]
         ] ],
-        [ "Flash and Debug:", "index.html#autotoc_md37", null ],
-        [ "Project structure and developing applications", "index.html#autotoc_md38", null ],
-        [ "Feedback", "index.html#autotoc_md39", null ],
-        [ "Participate in the development", "index.html#autotoc_md40", null ]
+        [ "Linux", "index.html#autotoc_md37", [
+          [ "Download the SDK:", "index.html#autotoc_md38", null ],
+          [ "Download and install the toolchain:", "index.html#autotoc_md39", null ],
+          [ "Compile a demo app:", "index.html#autotoc_md40", null ]
+        ] ],
+        [ "Flash and Debug:", "index.html#autotoc_md41", null ],
+        [ "Project structure and developing applications", "index.html#autotoc_md42", null ],
+        [ "Feedback", "index.html#autotoc_md43", null ],
+        [ "Participate in the development", "index.html#autotoc_md44", null ]
       ] ]
     ] ],
-    [ "GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_gpio_lib__r_e_a_d_m_e.html", [
-      [ "GPIO Example", "md_a9_gpio_lib__r_e_a_d_m_e.html#autotoc_md1", [
-        [ "Functions of this test example:", "md_a9_gpio_lib__r_e_a_d_m_e.html#autotoc_md2", null ]
-      ] ],
-      [ "Running the GPIO example:", "md_a9_gpio_lib__r_e_a_d_m_e.html#autotoc_md3", null ]
+    [ "ADS1015 Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_ads1015_lib__r_e_a_d_m_e.html", [
+      [ "ADS1015 Example", "md_a9_ads1015_lib__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Running the GPIO example:", "md_a9_ads1015_lib__r_e_a_d_m_e.html#autotoc_md2", null ]
     ] ],
-    [ "GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_i2c_lib__r_e_a_d_m_e.html", [
-      [ "I2C Example", "md_a9_i2c_lib__r_e_a_d_m_e.html#autotoc_md5", null ],
-      [ "Running the GPIO example:", "md_a9_i2c_lib__r_e_a_d_m_e.html#autotoc_md6", null ]
+    [ "GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_gpio_lib__r_e_a_d_m_e.html", [
+      [ "GPIO Example", "md_a9_gpio_lib__r_e_a_d_m_e.html#autotoc_md4", [
+        [ "Functions of this test example:", "md_a9_gpio_lib__r_e_a_d_m_e.html#autotoc_md5", null ]
+      ] ],
+      [ "Running the GPIO example:", "md_a9_gpio_lib__r_e_a_d_m_e.html#autotoc_md6", null ]
+    ] ],
+    [ "I2C Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_i2c_lib__r_e_a_d_m_e.html", [
+      [ "I2C Example Configuration:", "md_a9_i2c_lib__r_e_a_d_m_e.html#autotoc_md8", null ],
+      [ "Running the I2C example:", "md_a9_i2c_lib__r_e_a_d_m_e.html#autotoc_md9", null ]
     ] ],
     [ "MQTT Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_mqtt_lib__r_e_a_d_m_e.html", [
-      [ "Setting up and running the example for your AWS IoT:", "md_a9_mqtt_lib__r_e_a_d_m_e.html#autotoc_md9", null ]
+      [ "Setting up and running the example for your AWS IoT:", "md_a9_mqtt_lib__r_e_a_d_m_e.html#autotoc_md13", null ]
     ] ],
     [ "Power Management Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_power_lib__r_e_a_d_m_e.html", [
-      [ "Running the example:", "md_a9_power_lib__r_e_a_d_m_e.html#autotoc_md11", null ]
+      [ "Running the example:", "md_a9_power_lib__r_e_a_d_m_e.html#autotoc_md17", null ]
     ] ],
     [ "SPI Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_spi_lib__r_e_a_d_m_e.html", [
-      [ "SPI example", "md_a9_spi_lib__r_e_a_d_m_e.html#autotoc_md13", null ],
-      [ "Running the SPI example:", "md_a9_spi_lib__r_e_a_d_m_e.html#autotoc_md14", null ]
-    ] ],
-    [ "ADS866x Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_ads866x_lib__r_e_a_d_m_e.html", [
-      [ "Running the example:", "md_ads866x_lib__r_e_a_d_m_e.html#autotoc_md16", null ]
+      [ "SPI example", "md_a9_spi_lib__r_e_a_d_m_e.html#autotoc_md19", null ],
+      [ "Running the SPI example:", "md_a9_spi_lib__r_e_a_d_m_e.html#autotoc_md20", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -89,7 +90,7 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
+        [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
@@ -103,7 +104,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "a9__ads1015__lib_2include_2i2c__lib_8h.html",
-"index.html#autotoc_md24"
+"pages.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

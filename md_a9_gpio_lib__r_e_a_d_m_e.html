@@ -85,21 +85,29 @@ $(document).ready(function(){initNavTree('md_a9_gpio_lib__r_e_a_d_m_e.html','');
 <div class="title">GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS) </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><blockquote class="doxtable">
-<p>This README assumes that you have already setup the GPRS_C_SDK and CSTDK. If not, please follow the instructions <a class="el" href="index.html#md_README">here</a> before continuing. </p>
-</blockquote>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><ul>
+<li>This library provides a wrapper over the GPIO library from the SDK provided by Ai-Thinker.</li>
+<li>It makes the job of a programmer easier by providing more user-friendly constructs. As a simple example <a class="el" href="gpio__lib_8h.html#a07e9516646e1bf36fac0c359ba152c74" title="Get the state from a GPIO.">gpio_get_state()</a> <b>returns</b> the state. Normally, one would access this as follows <div class="fragment"><div class="line">GPIO_LEVEL state;</div>
+<div class="line">GPIO_Get(gpio_num, &amp;state);</div>
+</div><!-- fragment --> Using library: <div class="fragment"><div class="line">uint8_t state = gpio_get_state(gpio_num);</div>
+</div><!-- fragment --></li>
+<li>These wrapper functions not only save time, but also help programmers maintain stability with their homogeneous code.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
 GPIO Example</h1>
 <p>This test code shows how to configure gpio and how to use gpio interrupt with the wrapper functions provided under this library.</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Functions of this test example:</h2>
 <ul>
 <li>GPIO_PIN27: Output, connected to Blue LED on the dev board. Blinks with 1 second intervals.</li>
 <li>GPIO_PIN4: Input, pulled up, interrupt from falling edge</li>
 <li>GPIO_PIN2: Input, state of this pin is read when the interrupt triggers on GPIO_PIN4</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Running the GPIO example:</h1>
+<blockquote class="doxtable">
+<p>This README assumes that you have already setup the GPRS_C_SDK and CSTDK. If not, please follow the instructions <a class="el" href="index.html#md_README">here</a> before continuing. </p>
+</blockquote>
 <ul>
 <li>Copy the <a href="./a9_gpio_lib">library folder</a> of this project into the <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo">demo</a> folder of your installed SDK.</li>
 <li>Build and flash the code as mentioned <a class="el" href="index.html#md_README">here</a>. </li>
