@@ -3,7 +3,26 @@
 ## Overview
 This SDK provides a wrapper over the most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9G making for simpler setup and faster deployability.
 
-**Features**
+The A9/A9G can be used in a wide variety of IoT applications. This low-cost, effective module can be the go-to product for quick development and deployment of IoT solutions around the world. Okay okay, I'm going to stop bragging about stuff you already know and get to the point of all this conversation.
+
+**What are we doing here?**
+This is an effort to share the knowledge and experience we gained in our process of using this module with the open-source community hoping it saves time and effort to as many IoTers out there as possible.
+
+**This brings me to talk about the drawbacks about the A9/A9G modules:**
+- Scattered Documentation plus language barriers.
+- AT commands do not provide anywhere near half the complete control that can be obtained on this module using the SDK.
+- Development on this product has been almost completely stopped.
+
+**How do we possible solve these?**
+- This library provides an easier-to-use and ready-to-deploy, out of the box API wrapper over the GPRS_C_SDK provided by Ai-Thinker. Dont get me wrong, you will still need to use and setup the GPRS_C_SDK and setup the toolkit but we have tried to simplify it for you so you dont need to waste your precious time looking for the right links and putting the documents together(which if you keep scrolling, you'll find all the steps to get you going!).
+- On top of that, we provide wrapper functions/APIs to maintain homogeneity as much as possible in your code structuring and writing.
+- They also help you skip complex steps in order to get the job done with simpler, lesser code and better documentation!
+
+Please do keep reading to know more. And since we rely on your inputs and feedback to grow and improve this project and hence the open-source community in general, please feel free to [give us feedback](## Feedback)[create issues, suggest edits and add functionalities](## Participate in the development). Dont forget to <kbd> Star </kbd> us on the top right corner of this project if you like what we are trying to achieve! 
+
+With increasing traffic, we will come up with rigid procedures to maintain process in the same. Until then, HAVE FUN AND KEEP IoTing!
+
+## Features
 
 * Provides an easier-to-use and ready-to-deploy out of the box API. Integrates a wide range of features including:
   - [x] GPIO
@@ -233,7 +252,7 @@ Including environment installation, burn & debug, api docs etc.
 
 * [create issue on github](https://github.com/IoTReady/a9_libraries/issues/new)
 
-* Click ★ <kbd> Star </kbd> on the right corner of this page if this repo helps you
+* Click ★ <kbd> Star </kbd> on the top right corner of this page if this repo helps you
 
 
 
