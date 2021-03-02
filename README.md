@@ -1,4 +1,4 @@
-# Ai-Thinker GPRS modules- A9/A9G Libraries using [Ai-Thinker GPRS C SDK](https://github.com/Ai-Thinker-Open/GPRS-C-SDK)
+# Ai-Thinker GPRS modules- A9/A9G Libraries using [Ai-Thinker GPRS C SDK]
 
 ## Overview
 This SDK provides a wrapper over the most used functionalities for the Ai-Thinker GPRS SoC modules A9/A9G making for simpler setup and faster deployability.
@@ -20,7 +20,8 @@ This SDK provides a wrapper over the most used functionalities for the Ai-Thinke
   
 ## Hardware
 
-### 1.[ A9: GPRS Module](http://www.ai-thinker.com/pro_view-9.html)
+### 1. A9: GPRS Module 
+(http://www.ai-thinker.com/pro_view-9.html) 
 
 ![](./doc/assets/A9.png) <br>
 
@@ -46,7 +47,8 @@ This SDK provides a wrapper over the most used functionalities for the Ai-Thinke
   * Calls
   * SMS service
 
-### 2. [A9G: GPRS + GPS + BDS Module](http://www.ai-thinker.com/pro_view-28.html)
+### 2. A9G: GPRS + GPS + BDS Module 
+(http://www.ai-thinker.com/pro_view-28.html)
 
 ![](./doc/assets/A9G.png) <br>
 
@@ -56,7 +58,13 @@ This SDK provides a wrapper over the most used functionalities for the Ai-Thinke
   * All the features of A9 above
   * Integrated GPS+BDS (connected to UART2 internal of module)
 
-### 3. [A9](http://www.ai-thinker.com/pro_view-78.html)/[A9G](http://www.ai-thinker.com/pro_view-77.html) GPRS (+GPS+BDS) Development Board( pudding)
+### 3. A9
+
+(http://www.ai-thinker.com/pro_view-78.html)/
+
+A9G GPRS (+GPS+BDS) Development Board( pudding)
+
+(http://www.ai-thinker.com/pro_view-77.html) 
 
 ![](./doc/assets/A9G_dev.png) <br>
 A9/A9G development board for easy development and debugging

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>A9/A9G Libraries using Ai-Thinker GPRS C SDK  0.1.0: GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)</title>
+<title>A9/A9G Libraries using Ai-Thinker GPRS C SDK  0.1.0: I2C Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,17 +82,26 @@ $(document).ready(function(){initNavTree('md_a9_i2c_lib__r_e_a_d_m_e.html',''); 
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">GPIO Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS) </div>  </div>
+<div class="title">I2C Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS) </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><blockquote class="doxtable">
+<div class="textblock"><ul>
+<li>A simpler easier-to-use wrapper library over the Ai-Thinker GPRS_C_SDK that allows faster coding and easier use of functionalities.</li>
+<li>Forget about creating complex structures or allocating memory/buffers. Just call the functions with your desired parameters according to the documentation provided and you're good to go!</li>
+<li>A quick function to test connection with the I2C peripheral.</li>
+<li>Functions to read data from I2C bus as simple as just providing the I2C address and port selected on the A9!</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+I2C Example Configuration:</h1>
+<ul>
+<li>Change the definitions as needed for your I2C connection and setup. I2C_ACC -&gt; I2C port to be used. I2C_ADD -&gt; Address of the I2C slave device.</li>
+<li>This example tries to establish communication with the slave I2C device and prints the result accordingly.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Running the I2C example:</h1>
+<blockquote class="doxtable">
 <p>This README assumes that you have already setup the GPRS_C_SDK and CSTDK. If not, please follow the instructions <a class="el" href="index.html#md_README">here</a> before continuing. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md5"></a>
-I2C Example</h1>
-<p>This test code shows how to configure I2C.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Running the GPIO example:</h1>
 <ul>
 <li>Copy the <a href="./a9_gpio_lib">library folder</a> of this project into the <a href="https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/master/demo">demo</a> folder of your installed SDK.</li>
 <li>Build and flash the code as mentioned <a class="el" href="index.html#md_README">here</a>. </li>
