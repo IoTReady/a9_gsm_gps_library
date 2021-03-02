@@ -6,15 +6,15 @@ This SDK provides a wrapper over the most used functionalities for the Ai-Thinke
 The A9/A9G can be used in a wide variety of IoT applications. This low-cost, effective module can be the go-to product for quick development and deployment of IoT solutions around the world. Okay okay, I'm going to stop bragging about stuff you already know and get to the point of all this conversation.
 
 **What are we doing here?**
-This is an effort to share the knowledge and experience we gained in our process of using this module with the open-source community hoping it saves time and effort to as many IoTers out there as possible.
+This is an effort to share the knowledge and experience we gained in our process of using this module with the open-source community hoping it saves time and effort for as many IoTers out there as possible.
 
-**This brings me to talk about the drawbacks about the A9/A9G modules:**
+**This brings me to talk about the drawbacks about trying to use the A9/A9G modules:**
 - Scattered Documentation plus language barriers.
 - AT commands do not provide anywhere near half the complete control that can be obtained on this module using the SDK.
 - Development on this product has been almost completely stopped.
 
-**How do we possible solve these?**
-- This library provides an easier-to-use and ready-to-deploy, out of the box API wrapper over the GPRS_C_SDK provided by Ai-Thinker. Dont get me wrong, you will still need to use and setup the GPRS_C_SDK and setup the toolkit but we have tried to simplify it for you so you dont need to waste your precious time looking for the right links and putting the documents together(which if you keep scrolling, you'll find all the steps to get you going!).
+**What does this SDK do to solve these?**
+- This library provides an easier-to-use and ready-to-deploy, out of the box API wrapper over the GPRS_C_SDK provided by Ai-Thinker. Dont get me wrong, you will still need to use and setup the GPRS_C_SDK and setup the toolkit, but we have tried to simplify it for you so you dont need to waste your precious time looking for the right links and putting the documents together(which if you keep scrolling, you'll find all the steps to get you going!).
 - On top of that, we provide wrapper functions/APIs to maintain homogeneity as much as possible in your code structuring and writing.
 - They also help you skip complex steps in order to get the job done with simpler, lesser code and better documentation!
 
