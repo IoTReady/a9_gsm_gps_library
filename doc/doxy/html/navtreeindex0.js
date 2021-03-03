@@ -151,8 +151,8 @@ var NAVTREEINDEX0 =
 "i2c__example_8c.html#ae6d8e9116c85765bf8322a1d8ab9fa66":[8,0,2,1,0,9],
 "i2c__example_8c.html#aefeffa5cfb9654e78b33f577b6d7564d":[8,0,2,1,0,3],
 "i2c__example_8c.html#af9b242ea7b45e7d5cef17c94ecff1ccb":[8,0,2,1,0,8],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#autotoc_md22":[0,0],
 "index.html#autotoc_md23":[0,1],
 "index.html#autotoc_md24":[0,2],
@@ -188,8 +188,12 @@ var NAVTREEINDEX0 =
 "md_a9_i2c_lib__r_e_a_d_m_e.html#autotoc_md8":[3,0],
 "md_a9_i2c_lib__r_e_a_d_m_e.html#autotoc_md9":[3,1],
 "md_a9_mqtt_lib__r_e_a_d_m_e.html":[4],
+"md_a9_mqtt_lib__r_e_a_d_m_e.html#autotoc_md11":[0],
+"md_a9_mqtt_lib__r_e_a_d_m_e.html#autotoc_md12":[1],
 "md_a9_mqtt_lib__r_e_a_d_m_e.html#autotoc_md13":[4,0],
 "md_a9_power_lib__r_e_a_d_m_e.html":[5],
+"md_a9_power_lib__r_e_a_d_m_e.html#autotoc_md15":[2],
+"md_a9_power_lib__r_e_a_d_m_e.html#autotoc_md16":[3],
 "md_a9_power_lib__r_e_a_d_m_e.html#autotoc_md17":[5,0],
 "md_a9_spi_lib__r_e_a_d_m_e.html":[6],
 "md_a9_spi_lib__r_e_a_d_m_e.html#autotoc_md19":[6,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "mqtt__lib_8h.html#aa1c5b45729fc9c06c3bd2d2a4f378b6caa60ff03129ab180db6166fb678408408":[8,0,3,0,2,2,0],
 "mqtt__lib_8h.html#aa9eb54b084750944bf35cfd24997b8c2":[8,0,3,0,2,3],
 "mqtt__lib_8h.html#ac32bfe6494d0eb8981949b575286bf63":[8,0,3,0,2,6],
-"mqtt__lib_8h.html#ae1b4a693d7d09ec9460528059e780ec2":[8,0,3,0,2,7],
-"mqtt__lib_8h_source.html":[8,0,3,0,2],
-"pages.html":[],
-"power__example_8c.html":[8,0,4,1,0],
-"power__example_8c.html#a3a8c0eccc2e3273df1b3118fc561c176":[8,0,4,1,0,6]
+"mqtt__lib_8h.html#ae1b4a693d7d09ec9460528059e780ec2":[8,0,3,0,2,7]
 };

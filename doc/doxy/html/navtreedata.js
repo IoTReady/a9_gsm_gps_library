@@ -105,7 +105,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "a9__ads1015__lib_2include_2i2c__lib_8h.html",
-"power__example_8c.html#a58fc95dd193ebd2e6c0b221c945d99d9"
+"mqtt__lib_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
