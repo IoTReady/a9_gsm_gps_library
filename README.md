@@ -247,7 +247,11 @@ Each folder contains the C library and corresponding header files. To use the li
 
 Including environment installation, burn & debug, api docs etc.
 
+## Generating the Documentation
 
+This SDK comes with a convenient, browsable set of documentation. The documentation is available in HTML format in the ````doc/doxy/html```` directory of the repository.
+
+You can update this documentation by running the command ````doxygen Doxyfile```` in the base directory of the repository. You will need to have previously installed the [Doxygen](https://www.doxygen.nl/) package.
 ## Feedback
 
 * [create issue on github](https://github.com/IoTReady/a9_libraries/issues/new)

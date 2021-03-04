@@ -177,6 +177,7 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md43":[0,4,3],
 "index.html#autotoc_md44":[0,4,4],
 "index.html#autotoc_md45":[0,4,5],
+"index.html#autotoc_md46":[0,4,6],
 "md_a9_ads1015_lib__r_e_a_d_m_e.html":[1],
 "md_a9_ads1015_lib__r_e_a_d_m_e.html#autotoc_md1":[1,0],
 "md_a9_ads1015_lib__r_e_a_d_m_e.html#autotoc_md2":[1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "mqtt__lib_8h.html#aa1c5b45729fc9c06c3bd2d2a4f378b6ca8b6be0f5c628a81a9896b110b8fac62e":[8,0,3,0,2,2,2],
 "mqtt__lib_8h.html#aa1c5b45729fc9c06c3bd2d2a4f378b6caa60ff03129ab180db6166fb678408408":[8,0,3,0,2,2,0],
 "mqtt__lib_8h.html#aa9eb54b084750944bf35cfd24997b8c2":[8,0,3,0,2,3],
-"mqtt__lib_8h.html#ac32bfe6494d0eb8981949b575286bf63":[8,0,3,0,2,6],
-"mqtt__lib_8h.html#ae1b4a693d7d09ec9460528059e780ec2":[8,0,3,0,2,7]
+"mqtt__lib_8h.html#ac32bfe6494d0eb8981949b575286bf63":[8,0,3,0,2,6]
 };

@@ -52,8 +52,9 @@ var NAVTREE =
         ] ],
         [ "Flash and Debug:", "index.html#autotoc_md42", null ],
         [ "Project structure and developing applications", "index.html#autotoc_md43", null ],
-        [ "Feedback", "index.html#autotoc_md44", null ],
-        [ "Participate in the development", "index.html#autotoc_md45", null ]
+        [ "Generating the Documentation", "index.html#autotoc_md44", null ],
+        [ "Feedback", "index.html#autotoc_md45", null ],
+        [ "Participate in the development", "index.html#autotoc_md46", null ]
       ] ]
     ] ],
     [ "ADS1015 Module for the AiThinker A9(GSM+GPRS) and A9G(GSM+GPRS+GPS)", "md_a9_ads1015_lib__r_e_a_d_m_e.html", [
@@ -105,7 +106,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "a9__ads1015__lib_2include_2i2c__lib_8h.html",
-"mqtt__lib_8h_source.html"
+"mqtt__lib_8h.html#ae1b4a693d7d09ec9460528059e780ec2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
