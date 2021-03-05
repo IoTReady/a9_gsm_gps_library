@@ -137,9 +137,9 @@ The download interface to the device is the HST interface. Depending upon how th
 
 ### Download the SDK:
 * Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly (need to have installed `git`).
-    ```
-    git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git --recursive
-    ```
+  ```
+  git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git --recursive
+  ```
   > This repo has been tested on [this version](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a)
 * Decompress the CSDK downloaded to GPRS_C_SDK folder into a directory, such as ~/projects/GPRS_C_SDK.
 
@@ -177,9 +177,9 @@ The download interface to the device is the HST interface. Depending upon how th
 mkdir ~/projects
 ````
 * Download the latest released archive from [github release page](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/releases) or clone directly(need to install `git`)
-    ```
+  ```
     git clone https://github.com/Ai-Thinker-Open/GPRS_C_SDK.git --recursive
-    ```
+  ```
   > This repo has been tested on [this version](https://github.com/Ai-Thinker-Open/GPRS_C_SDK/tree/555064940173977fa51aac860c800a2d3f4e890a)
 * Decompress the CSDK downloaded to GPRS_C_SDK folder into the directory, such as ~/projects/GPRS_C_SDK.
 
