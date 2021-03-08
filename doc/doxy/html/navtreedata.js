@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "A9/A9G Libraries using Ai-Thinker GPRS C SDK  0.1.0", "index.html", [
+  [ "A9/A9G Libraries using Ai-Thinker GPRS C SDK 0.1.0", "index.html", [
     [ "Ai-Thinker GPRS modules- A9/A9G Libraries using [Ai-Thinker GPRS C SDK]", "index.html", [
       [ "Overview", "index.html#autotoc_md22", null ],
       [ "Features", "index.html#autotoc_md23", null ],
