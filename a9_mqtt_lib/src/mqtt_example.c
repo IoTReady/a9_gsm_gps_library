@@ -49,7 +49,7 @@ static void EventDispatch(API_Event_t* pEvent)
         case API_EVENT_ID_NETWORK_ATTACHED:
             Trace(1, "network attach success");
             Network_PDP_Context_t context = {
-                .apn        = "ntnet",
+                .apn        = "web",
                 .userName   = ""     ,
                 .userPasswd = ""
             };
@@ -126,6 +126,11 @@ void OnMqttConnection(MQTT_Client_t *client, void *arg, MQTT_Connection_Status_t
     Trace(1,"MQTT OnMqttConnection() end");
 }
 
+void OnMqttDisconnection()
+{
+    mqtt_ssl_initialize( CLIENT_ID, KEEP_ALIVE, CLEAN_SESSION, ca_crt, client_crt, client_key, BROKER_HOSTNAME, BROKER_PORT, OnMqttConnection);
+}
+
 void OnPublish(void* arg, MQTT_Error_t err)
 {
     if(err == MQTT_ERROR_NONE)
@@ -177,6 +182,7 @@ void SecondTaskEventDispatch(MQTT_Event_t* pEvent)
             break;
         case MQTT_EVENT_DISCONNECTED:
             mqttStatus = MQTT_STATUS_DISCONNECTED;
+            OnMqttDisconnection();
             break;
         default:
             break;
