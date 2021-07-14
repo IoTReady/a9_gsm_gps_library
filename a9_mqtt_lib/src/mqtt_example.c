@@ -13,6 +13,9 @@
 #include "mqtt_lib.h"
 #include "certs.h"
 
+#define PDP_CONTEXT_APN       "airtelgprs.com"
+#define PDP_CONTEXT_USERNAME  ""
+#define PDP_CONTEXT_PASSWD    ""
 
 #define MAIN_TASK_STACK_SIZE    (2048 * 2)
 #define MAIN_TASK_PRIORITY      0
@@ -26,7 +29,50 @@ static HANDLE mainTaskHandle = NULL;
 static HANDLE secondTaskHandle = NULL;
 // static HANDLE thirdTaskHandle = NULL;
 
+Network_PDP_Context_t context = {
+    .apn        = PDP_CONTEXT_APN,
+    .userName   = PDP_CONTEXT_USERNAME,
+    .userPasswd = PDP_CONTEXT_PASSWD
+};
+
 void StartTimerPublish(uint32_t interval,MQTT_Client_t* client);
+
+bool AttachActivate()
+{
+    uint8_t temp[70];
+    uint8_t status;
+    bool ret = Network_GetAttachStatus(&status);
+    if(!ret)
+    {
+        Trace(2,"get attach status fail");
+        return false;
+    }
+    Trace(2,"attach status:%d",status);
+    if(!status)
+    {
+        ret = Network_StartAttach();
+        if(!ret)
+        {
+            Trace(2,"network attach fail");
+            return false;
+        }
+    }
+    else
+    {
+        ret = Network_GetActiveStatus(&status);
+        if(!ret)
+        {
+            Trace(2,"get activate status fail");
+            return false;
+        }
+        Trace(2,"activate status:%d",status);
+        if(!status)
+        {
+            Network_StartActive(context);
+        }
+    }
+    return true;
+}
 
 static void EventDispatch(API_Event_t* pEvent)
 {
@@ -40,25 +86,49 @@ static void EventDispatch(API_Event_t* pEvent)
             Trace(1, "system initialize complete");
             break;
 
+        case API_EVENT_ID_NETWORK_REGISTER_DENIED:
+            Trace(1,"network register denied");
+            AttachActivate();
+            break;  
+
         case API_EVENT_ID_NETWORK_REGISTERED_HOME:
         case API_EVENT_ID_NETWORK_REGISTERED_ROAMING:
             Trace(1, "network register success");
-            Network_StartAttach();
+            AttachActivate();
             break;
 
         case API_EVENT_ID_NETWORK_ATTACHED:
             Trace(1, "network attach success");
-            Network_PDP_Context_t context = {
-                .apn        = "web",
-                .userName   = ""     ,
-                .userPasswd = ""
-            };
-            Network_StartActive(context);
+            AttachActivate();
             break;
 
         case API_EVENT_ID_NETWORK_ACTIVATED:
             Trace(1, "network activate success..");
             OS_ReleaseSemaphore(semMqttStart);
+            break;
+        
+        case API_EVENT_ID_NETWORK_DETACHED:
+            Trace(1,"network detached");
+            Network_StartDetach();
+            AttachActivate();
+            break;
+
+        case API_EVENT_ID_NETWORK_ATTACH_FAILED:
+            Trace(1,"network attach failed");
+            Network_StartDetach();
+            AttachActivate();
+            break;
+
+        case API_EVENT_ID_NETWORK_DEACTIVED:
+            Trace(1,"network deactived");
+            Network_StartDetach();
+            AttachActivate();
+            break;
+
+        case API_EVENT_ID_NETWORK_ACTIVATE_FAILED:
+            Trace(1,"network activate failed");
+            Network_StartDetach();
+            AttachActivate();
             break;
         
         case API_EVENT_ID_SOCKET_CONNECTED:
